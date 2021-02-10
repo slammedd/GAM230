@@ -17,7 +17,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
 
     public Transform groundCheck;
 
-    public bool isGrounded;
+    private bool isGrounded;
 
     private float checkRadius = 0.2f;
 
@@ -26,6 +26,8 @@ public class PlayerControllerRigidbody : MonoBehaviour
     public float jumpForce;
 
     public float dashForce;
+
+    public bool hasDashed;
 
 
     private void Start()
@@ -66,20 +68,18 @@ public class PlayerControllerRigidbody : MonoBehaviour
         Vector3 movementDirection = transform.right * x + transform.forward * z;
         Vector3 movement = new Vector3(movementDirection.x, rb.velocity.y, movementDirection.z);
         rb.velocity = movement;
-        
-
-
-
     }
 
     void Jump()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, checkRadius, ground);
 
+       
+
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             Debug.Log("Jump");
-            rb.velocity += new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
+            rb.velocity += new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);            
         }
             
     }
@@ -88,11 +88,12 @@ public class PlayerControllerRigidbody : MonoBehaviour
     {
         float z = Input.GetAxis("Vertical") * movementSpeed;
         Vector3 dashDirection = transform.forward * z;
+        const int dashMultiplier = 1000;
 
-        if (Input.GetButtonDown("Dash"))
+        if (Input.GetButtonDown("Dash") && !hasDashed)
         {
             Debug.Log("Dash");
-            rb.AddRelativeForce(new Vector3(0,0,dashForce));
+            rb.AddRelativeForce(new Vector3(0 , 0 , dashMultiplier * dashForce));          
         }
         
     }

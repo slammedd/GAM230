@@ -2818,7 +2818,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   jumpForce: 10
-  dashForce: 7500
+  dashForce: 10
 --- !u!54 &1435940625
 Rigidbody:
   m_ObjectHideFlags: 0
