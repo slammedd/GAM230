@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 
     private float yValue;
 
-    public Transform camera;
+    public Transform playerCamera;
 
     private CharacterController controller;
 
@@ -26,7 +26,9 @@ public class PlayerController : MonoBehaviour
 
     private bool isGrounded;
 
-    public float jumpForce;  
+    public float jumpForce;
+
+    public float dashSpeed;
 
     private void Start()
     {
@@ -39,6 +41,7 @@ public class PlayerController : MonoBehaviour
         MouseLook();
         PlayerMovement();
         Gravity();
+        Dash();
     }
 
     void MouseLook()
@@ -48,7 +51,7 @@ public class PlayerController : MonoBehaviour
         yValue -= mouseDirection.y;
         yValue = Mathf.Clamp(yValue, -75, 75);
 
-        camera.localEulerAngles = Vector3.right * yValue;
+        playerCamera.localEulerAngles = Vector3.right * yValue;
         transform.Rotate(Vector3.up * mouseDirection.x);
     }
 
@@ -60,6 +63,8 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = transform.right * x + transform.forward * z;
 
         controller.Move(movement * movementSpeed * Time.deltaTime);
+
+      
     }
 
     void Gravity()
@@ -84,5 +89,11 @@ public class PlayerController : MonoBehaviour
         {
             velocity.y = jumpForce;
         }
+    }
+
+    void Dash()
+    {
+
+       
     }
 }
