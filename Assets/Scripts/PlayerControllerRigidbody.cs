@@ -25,24 +25,27 @@ public class PlayerControllerRigidbody : MonoBehaviour
 
     public float jumpForce;
 
+    public float dashForce;
+
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
+        
     }
 
     private void Update()
     {
         MouseLook();
         Jump();
+        Dash();
     }
 
     private void FixedUpdate()
     {
         PlayerMovement();
     }
-
 
     void MouseLook()
     {
@@ -63,8 +66,10 @@ public class PlayerControllerRigidbody : MonoBehaviour
         Vector3 movementDirection = transform.right * x + transform.forward * z;
         Vector3 movement = new Vector3(movementDirection.x, rb.velocity.y, movementDirection.z);
         rb.velocity = movement;
-
         
+
+
+
     }
 
     void Jump()
@@ -73,11 +78,22 @@ public class PlayerControllerRigidbody : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
+            Debug.Log("Jump");
+            rb.velocity += new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
         }
             
     }
-    
 
+    void Dash()
+    {
+        float z = Input.GetAxis("Vertical") * movementSpeed;
+        Vector3 dashDirection = transform.forward * z;
 
+        if (Input.GetButtonDown("Dash"))
+        {
+            Debug.Log("Dash");
+            rb.AddRelativeForce(new Vector3(0,0,dashForce));
+        }
+        
+    }
 }

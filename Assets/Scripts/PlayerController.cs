@@ -41,7 +41,6 @@ public class PlayerController : MonoBehaviour
         MouseLook();
         PlayerMovement();
         Gravity();
-        Dash();
     }
 
     void MouseLook()
@@ -91,9 +90,4 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void Dash()
-    {
-
-       
-    }
 }
