@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isGrounded;
 
-    
+    public float jumpForce;  
 
     private void Start()
     {
@@ -39,7 +39,6 @@ public class PlayerController : MonoBehaviour
         MouseLook();
         PlayerMovement();
         Gravity();
-
     }
 
     void MouseLook()
@@ -65,6 +64,8 @@ public class PlayerController : MonoBehaviour
 
     void Gravity()
     {
+        Jump();
+
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
@@ -74,6 +75,14 @@ public class PlayerController : MonoBehaviour
         if(isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
+        }
+    }
+
+    void Jump()
+    {
+        if(isGrounded && Input.GetButtonDown("Jump"))
+        {
+            velocity.y = jumpForce;
         }
     }
 }
