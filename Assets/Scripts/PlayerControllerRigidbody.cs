@@ -27,12 +27,25 @@ public class PlayerControllerRigidbody : MonoBehaviour
 
     public float dashForce;
 
-    public bool hasDashed;
+    [HideInInspector] public bool hasDashed;
 
+    public float slideForce;
+
+    public float slideTime;
+
+    CapsuleCollider playerCollider;
+
+    float colliderHeight;
+
+    public float slideHeightDecrease;
+
+    private bool isSliding;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        playerCollider = GetComponent<CapsuleCollider>();
+        colliderHeight = playerCollider.height;
         Cursor.lockState = CursorLockMode.Locked;
         
     }
@@ -42,6 +55,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
         MouseLook();
         Jump();
         Dash();
+        Slide();
     }
 
     private void FixedUpdate()
@@ -79,7 +93,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
             hasDashed = false;
         }
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetKeyDown("space") && isGrounded)
         {
             Debug.Log("Jump");
             rb.velocity += new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);            
@@ -93,7 +107,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
         Vector3 dashDirection = transform.forward * z;
         const int dashMultiplier = 1000;
 
-        if (Input.GetButtonDown("Dash") && !hasDashed && !isGrounded)
+        if (Input.GetKeyDown("left shift") && !hasDashed && !isGrounded)
         {
             Debug.Log("Dash");
             rb.AddRelativeForce(new Vector3(0 , 0 , dashMultiplier * dashForce));
@@ -101,5 +115,26 @@ public class PlayerControllerRigidbody : MonoBehaviour
         }
         
     }
+
+    void Slide()
+    {
+        if (Input.GetKeyDown("left ctrl") && isGrounded && !isSliding)
+        {
+            Debug.Log("Slide");
+            StartCoroutine(SlideMovement());
+        }
+    }
+
+    IEnumerator SlideMovement()
+    {
+        isSliding = true;
+        playerCollider.height = slideHeightDecrease;
+        rb.AddForce(transform.forward * slideForce * Time.fixedDeltaTime, ForceMode.VelocityChange);
+        
+        yield return new WaitForSeconds(slideTime);
+        playerCollider.height = colliderHeight;
+        isSliding = false;
+    }
+
     
 }

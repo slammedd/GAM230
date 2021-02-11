@@ -10,7 +10,7 @@ public class DashRefil : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("powerup");
+            Debug.Log("Dash Refilled");
             playerController.hasDashed = false;
             Destroy(this.gameObject);
         }

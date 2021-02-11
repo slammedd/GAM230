@@ -2508,7 +2508,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-23556
+  m_Name: pb_Mesh13868
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2743,6 +2743,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726120554478555294, guid: 31fdc5d7ac54962419267eab28c73ada,
+        type: 3}
+      propertyPath: slideCameraMovement
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726120554478555294, guid: 31fdc5d7ac54962419267eab28c73ada,
+        type: 3}
+      propertyPath: slideTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726120554478555294, guid: 31fdc5d7ac54962419267eab28c73ada,
+        type: 3}
+      propertyPath: slideForce
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726120554478555294, guid: 31fdc5d7ac54962419267eab28c73ada,
+        type: 3}
+      propertyPath: slideHeightDecrease
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726120554478555295, guid: 31fdc5d7ac54962419267eab28c73ada,
+        type: 3}
+      propertyPath: m_Drag
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31fdc5d7ac54962419267eab28c73ada, type: 3}
