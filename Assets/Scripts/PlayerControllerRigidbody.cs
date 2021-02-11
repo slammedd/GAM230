@@ -29,17 +29,19 @@ public class PlayerControllerRigidbody : MonoBehaviour
 
     [HideInInspector] public bool hasDashed;
 
+    CapsuleCollider playerCollider;
+
+    float colliderHeight;
+   
     public float slideForce;
 
     public float slideTime;
 
-    CapsuleCollider playerCollider;
-
-    float colliderHeight;
-
-    public float slideHeightDecrease;
+    private float slideHeightDecrease = 1f;
 
     private bool isSliding;
+
+    public float slideJumpMultiplier;
 
     private void Start()
     {
@@ -77,13 +79,9 @@ public class PlayerControllerRigidbody : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal") * movementSpeed;
         float z = Input.GetAxis("Vertical") * movementSpeed;
-
-        //Vector3 movementDirection = transform.right * x + transform.forward * z;
-        //Vector3 movement = new Vector3(movementDirection.x, rb.velocity.y, movementDirection.z);
-        //rb.velocity = movement;
-
-        Vector3 nMovement = new Vector3(x, 0, z);
-        Vector3 newPos = rb.position + rb.transform.TransformDirection(nMovement);
+      
+        Vector3 Movement = new Vector3(x, 0, z);
+        Vector3 newPos = rb.position + rb.transform.TransformDirection(Movement);
         rb.MovePosition(newPos);
     }
 
@@ -96,7 +94,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
             hasDashed = false;
         }
 
-        if (Input.GetKeyDown("space") && isGrounded)
+        if (Input.GetKeyDown("space") && isGrounded && !isSliding)
         {
             Debug.Log("Jump");
             rb.velocity += new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);            
@@ -111,10 +109,9 @@ public class PlayerControllerRigidbody : MonoBehaviour
         if (Input.GetKeyDown("left shift") && !hasDashed && !isGrounded)
         {
             Debug.Log("Dash");
-            rb.AddRelativeForce(new Vector3(0 , 0 , dashForce), ForceMode.VelocityChange);            
+            rb.AddRelativeForce(new Vector3(0 , 5 , dashForce), ForceMode.VelocityChange);            
             hasDashed = true;
-        }
-        
+        }        
     }
 
     void Slide()
@@ -124,10 +121,17 @@ public class PlayerControllerRigidbody : MonoBehaviour
             Debug.Log("Slide");
             StartCoroutine(SlideMovement());
         }
+
+        if (Input.GetKeyDown("space") && isSliding)
+        {
+            Debug.Log("Slide Jump");
+            playerCollider.height = colliderHeight;
+            rb.velocity += new Vector3(rb.velocity.x, jumpForce * slideJumpMultiplier, rb.velocity.z);
+        }
     }
 
     IEnumerator SlideMovement()
-    {        
+    {       
         isSliding = true;
         playerCollider.height = slideHeightDecrease;
         rb.AddRelativeForce(new Vector3(0, 0, slideForce), ForceMode.VelocityChange);
