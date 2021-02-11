@@ -46,8 +46,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         playerCollider = GetComponent<CapsuleCollider>();
         colliderHeight = playerCollider.height;
-        Cursor.lockState = CursorLockMode.Locked;
-        
+        Cursor.lockState = CursorLockMode.Locked;        
     }
 
     private void Update()
@@ -79,9 +78,13 @@ public class PlayerControllerRigidbody : MonoBehaviour
         float x = Input.GetAxis("Horizontal") * movementSpeed;
         float z = Input.GetAxis("Vertical") * movementSpeed;
 
-        Vector3 movementDirection = transform.right * x + transform.forward * z;
-        Vector3 movement = new Vector3(movementDirection.x, rb.velocity.y, movementDirection.z);
-        rb.velocity = movement;
+        //Vector3 movementDirection = transform.right * x + transform.forward * z;
+        //Vector3 movement = new Vector3(movementDirection.x, rb.velocity.y, movementDirection.z);
+        //rb.velocity = movement;
+
+        Vector3 nMovement = new Vector3(x, 0, z);
+        Vector3 newPos = rb.position + rb.transform.TransformDirection(nMovement);
+        rb.MovePosition(newPos);
     }
 
     void Jump()
@@ -97,20 +100,18 @@ public class PlayerControllerRigidbody : MonoBehaviour
         {
             Debug.Log("Jump");
             rb.velocity += new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);            
-        }
-            
+        }            
     }
 
     void Dash()
     {
         float z = Input.GetAxis("Vertical") * movementSpeed;
         Vector3 dashDirection = transform.forward * z;
-        const int dashMultiplier = 1000;
-
+        
         if (Input.GetKeyDown("left shift") && !hasDashed && !isGrounded)
         {
             Debug.Log("Dash");
-            rb.AddRelativeForce(new Vector3(0 , 0 , dashMultiplier * dashForce));
+            rb.AddRelativeForce(new Vector3(0 , 0 , dashForce), ForceMode.VelocityChange);            
             hasDashed = true;
         }
         
@@ -126,10 +127,10 @@ public class PlayerControllerRigidbody : MonoBehaviour
     }
 
     IEnumerator SlideMovement()
-    {
+    {        
         isSliding = true;
         playerCollider.height = slideHeightDecrease;
-        rb.AddForce(transform.forward * slideForce * Time.fixedDeltaTime, ForceMode.VelocityChange);
+        rb.AddRelativeForce(new Vector3(0, 0, slideForce), ForceMode.VelocityChange);
         
         yield return new WaitForSeconds(slideTime);
         playerCollider.height = colliderHeight;

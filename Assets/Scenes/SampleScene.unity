@@ -2757,17 +2757,32 @@ PrefabInstance:
     - target: {fileID: 2726120554478555294, guid: 31fdc5d7ac54962419267eab28c73ada,
         type: 3}
       propertyPath: slideForce
-      value: 1000
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2726120554478555294, guid: 31fdc5d7ac54962419267eab28c73ada,
         type: 3}
       propertyPath: slideHeightDecrease
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2726120554478555294, guid: 31fdc5d7ac54962419267eab28c73ada,
+        type: 3}
+      propertyPath: movementSpeed
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726120554478555294, guid: 31fdc5d7ac54962419267eab28c73ada,
+        type: 3}
+      propertyPath: dashForce
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2726120554478555295, guid: 31fdc5d7ac54962419267eab28c73ada,
         type: 3}
       propertyPath: m_Drag
-      value: 5
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726120554478555295, guid: 31fdc5d7ac54962419267eab28c73ada,
+        type: 3}
+      propertyPath: m_Interpolate
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31fdc5d7ac54962419267eab28c73ada, type: 3}
