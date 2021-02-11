@@ -74,7 +74,10 @@ public class PlayerControllerRigidbody : MonoBehaviour
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, checkRadius, ground);
 
-       
+        if (isGrounded)
+        {
+            hasDashed = false;
+        }
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
@@ -90,11 +93,13 @@ public class PlayerControllerRigidbody : MonoBehaviour
         Vector3 dashDirection = transform.forward * z;
         const int dashMultiplier = 1000;
 
-        if (Input.GetButtonDown("Dash") && !hasDashed)
+        if (Input.GetButtonDown("Dash") && !hasDashed && !isGrounded)
         {
             Debug.Log("Dash");
-            rb.AddRelativeForce(new Vector3(0 , 0 , dashMultiplier * dashForce));          
+            rb.AddRelativeForce(new Vector3(0 , 0 , dashMultiplier * dashForce));
+            hasDashed = true;
         }
         
     }
+    
 }
