@@ -3428,6 +3428,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &641662390 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2726120554789706760, guid: 31fdc5d7ac54962419267eab28c73ada,
+    type: 3}
+  m_PrefabInstance: {fileID: 2726120553747539854}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &673835113
 GameObject:
   m_ObjectHideFlags: 0
@@ -10610,6 +10616,41 @@ PrefabInstance:
         type: 3}
       propertyPath: slideForce
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726120554478555294, guid: 31fdc5d7ac54962419267eab28c73ada,
+        type: 3}
+      propertyPath: maxFOV
+      value: 85
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726120554478555294, guid: 31fdc5d7ac54962419267eab28c73ada,
+        type: 3}
+      propertyPath: FOVTime
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726120554478555294, guid: 31fdc5d7ac54962419267eab28c73ada,
+        type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 641662390}
+    - target: {fileID: 2726120554478555294, guid: 31fdc5d7ac54962419267eab28c73ada,
+        type: 3}
+      propertyPath: minFOV
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726120554478555294, guid: 31fdc5d7ac54962419267eab28c73ada,
+        type: 3}
+      propertyPath: FOVReturnTime
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726120554478555294, guid: 31fdc5d7ac54962419267eab28c73ada,
+        type: 3}
+      propertyPath: velocityDegredation
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726120554789706760, guid: 31fdc5d7ac54962419267eab28c73ada,
+        type: 3}
+      propertyPath: field of view
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31fdc5d7ac54962419267eab28c73ada, type: 3}

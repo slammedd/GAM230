@@ -13,7 +13,15 @@ public class PlayerControllerRigidbody : MonoBehaviour
 
     private float yValue;
 
-    public Transform playerCamera;
+    public Camera playerCamera;
+
+    public float minFOV;
+
+    public float maxFOV;
+
+    public float FOVTime;
+
+    public float FOVReturnTime;
 
     public Transform groundCheck;
 
@@ -57,6 +65,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
         Jump();
         Dash();
         Slide();
+        CameraFOV();
     }
 
     private void FixedUpdate()
@@ -71,7 +80,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
         yValue -= mouseDirection.y;
         yValue = Mathf.Clamp(yValue, -75, 75);
 
-        playerCamera.localEulerAngles = Vector3.right * yValue;
+        playerCamera.transform.localEulerAngles = Vector3.right * yValue;
         transform.Rotate(Vector3.up * mouseDirection.x);
     }
 
@@ -82,7 +91,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
       
         Vector3 Movement = new Vector3(x, 0, z);
         Vector3 newPos = rb.position + rb.transform.TransformDirection(Movement);
-        rb.MovePosition(newPos);
+        rb.MovePosition(newPos);   
     }
 
     void Jump()
@@ -141,5 +150,16 @@ public class PlayerControllerRigidbody : MonoBehaviour
         isSliding = false;
     }
 
-    
+    void CameraFOV()
+    {
+        if(rb.velocity.magnitude > 10)
+        {
+            playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, maxFOV, FOVTime);
+        }
+
+        else if (rb.velocity.magnitude < 9.5)
+        {
+            playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, minFOV, FOVReturnTime);
+        }
+    }
 }
