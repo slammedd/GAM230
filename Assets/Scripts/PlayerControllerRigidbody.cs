@@ -25,7 +25,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
 
     public Transform groundCheck;
 
-    private bool isGrounded;
+    [HideInInspector] public bool isGrounded;
 
     private float checkRadius = 0.2f;
 
@@ -162,4 +162,5 @@ public class PlayerControllerRigidbody : MonoBehaviour
             playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, minFOV, FOVReturnTime);
         }
     }
+
 }
