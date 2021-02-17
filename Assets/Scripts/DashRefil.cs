@@ -12,7 +12,7 @@ public class DashRefil : MonoBehaviour
         {
             Debug.Log("Dash Refilled");
             playerController.hasDashed = false;
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }
