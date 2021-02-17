@@ -97,6 +97,7 @@ MonoBehaviour:
   damage: 10
   range: 100
   playerCamera: {fileID: 2726120554789706760}
+  muzzleFlash: {fileID: 763527711631567677}
 --- !u!65 &1912015040
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -363,7 +364,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.96367925, b: 0.9481132, a: 1}
   m_Intensity: 0.5
-  m_Range: 3
+  m_Range: 0.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -407,7 +408,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 76, z: 0, w: 80}
+  m_BoundingSphereOverride: {x: 0, y: 1.01e-43, z: 2.3509887e-38, w: 0.0000000010675505}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -423,7 +424,7 @@ GameObject:
   - component: {fileID: 763527711631567677}
   - component: {fileID: 5725671415630177371}
   m_Layer: 0
-  m_Name: ShotSpray
+  m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -11431,26 +11431,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 763527711631567677, guid: 31fdc5d7ac54962419267eab28c73ada,
+    - target: {fileID: 1912015043, guid: 31fdc5d7ac54962419267eab28c73ada, type: 3}
+      propertyPath: impactEffect
+      value: 
+      objectReference: {fileID: 354540324672454849, guid: eef85dd9017eb3a4b9b1be52e461a9e9,
         type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2641867718153816167, guid: 31fdc5d7ac54962419267eab28c73ada,
-        type: 3}
-      propertyPath: m_Range
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2641867718153816167, guid: 31fdc5d7ac54962419267eab28c73ada,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.y
-      value: 76
-      objectReference: {fileID: 0}
-    - target: {fileID: 2641867718153816167, guid: 31fdc5d7ac54962419267eab28c73ada,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.w
-      value: 80
-      objectReference: {fileID: 0}
     - target: {fileID: 2726120554478555265, guid: 31fdc5d7ac54962419267eab28c73ada,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11510,11 +11495,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 3384309053120917547, guid: 31fdc5d7ac54962419267eab28c73ada,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31fdc5d7ac54962419267eab28c73ada, type: 3}
