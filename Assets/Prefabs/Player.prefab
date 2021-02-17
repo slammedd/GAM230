@@ -95,9 +95,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  range: 100
+  range: 35
+  impactForce: 75
+  fireRate: 3
   playerCamera: {fileID: 2726120554789706760}
   muzzleFlash: {fileID: 763527711631567677}
+  impactEffect: {fileID: 354540324672454849, guid: eef85dd9017eb3a4b9b1be52e461a9e9,
+    type: 3}
 --- !u!65 &1912015040
 BoxCollider:
   m_ObjectHideFlags: 0
