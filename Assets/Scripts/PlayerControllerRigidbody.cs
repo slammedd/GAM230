@@ -35,6 +35,14 @@ public class PlayerControllerRigidbody : MonoBehaviour
 
     public float jumpForce;
 
+    public float coyoteTime;
+
+    private float coyoteCounter;
+
+    public float jumpBufferLength;
+
+    private float jumpBufferCount;
+
     public float dashForce;
 
     [HideInInspector] public bool hasDashed;
@@ -106,11 +114,38 @@ public class PlayerControllerRigidbody : MonoBehaviour
             hasDashed = false;
         }
 
-        if (Input.GetKeyDown("space") && isGrounded && !isSliding)
+        if (Input.GetKeyDown("space"))
+        {
+            jumpBufferCount = jumpBufferLength;
+        }
+
+        else
+        {
+            jumpBufferCount -= Time.deltaTime;
+        }
+
+        if (jumpBufferCount >= 0 && coyoteCounter > 0 && !isSliding)
         {
             Debug.Log("Jump");
-            rb.velocity += new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);            
-        }            
+            rb.velocity += new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
+            jumpBufferCount = 0;
+        }
+
+        if (isGrounded)
+        {
+            coyoteCounter = coyoteTime;
+        }
+
+        else
+        {
+            coyoteCounter -= Time.deltaTime;
+        }
+
+        if (Input.GetKeyUp("space"))
+        {
+            coyoteCounter = -1;
+        }
+           
     }
 
     void Dash()

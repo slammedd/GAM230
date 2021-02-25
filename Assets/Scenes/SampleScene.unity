@@ -12683,6 +12683,16 @@ PrefabInstance:
       propertyPath: maxSpeed
       value: 12.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2726120554478555294, guid: 31fdc5d7ac54962419267eab28c73ada,
+        type: 3}
+      propertyPath: coyoteTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726120554478555294, guid: 31fdc5d7ac54962419267eab28c73ada,
+        type: 3}
+      propertyPath: jumpBufferLength
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31fdc5d7ac54962419267eab28c73ada, type: 3}
 --- !u!1001 &3330740297212943887
