@@ -158,7 +158,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
         }
 
         else if (rb.velocity.magnitude < 9.5)
-        {
+        {            
             playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, minFOV, FOVReturnTime);
         }
     }

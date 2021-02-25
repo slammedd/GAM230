@@ -7,10 +7,11 @@ public class Shoot : MonoBehaviour
     public float damage;
     public float range;
     public float impactForce;
-    public float fireRate;
+    public float fireRate; 
     public Camera playerCamera;
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
+    public Animator weaponAnimatior;
     private float fireCooldown = 0;
 
     private void Update()
@@ -18,14 +19,15 @@ public class Shoot : MonoBehaviour
         if (Input.GetMouseButton(0) && Time.time >= fireCooldown)
         {
             fireCooldown = Time.time + 1 / fireRate;
+            weaponAnimatior.SetTrigger("Trigger");
             Shot();
-        }
+        }               
     }
 
     void Shot()
     {
         muzzleFlash.Play();
-        RaycastHit hit;
+        RaycastHit hit;        
 
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, range))
         {
@@ -46,5 +48,6 @@ public class Shoot : MonoBehaviour
             }
         }
 
-    }
+      
+    } 
 }
