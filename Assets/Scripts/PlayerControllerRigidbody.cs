@@ -7,6 +7,8 @@ public class PlayerControllerRigidbody : MonoBehaviour
 
     public float movementSpeed;
 
+    public float maxSpeed;
+
     Rigidbody rb;
 
     public float sensitivity;
@@ -66,6 +68,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
         Dash();
         Slide();
         CameraFOV();
+        VelocityCap();
     }
 
     private void FixedUpdate()
@@ -160,6 +163,14 @@ public class PlayerControllerRigidbody : MonoBehaviour
         else if (rb.velocity.magnitude < 9.5)
         {            
             playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, minFOV, FOVReturnTime);
+        }
+    }
+
+    void VelocityCap()
+    {
+        if(rb.velocity.magnitude > maxSpeed)
+        {
+            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
         }
     }
 

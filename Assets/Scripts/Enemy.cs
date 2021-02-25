@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float health;
+    public ParticleSystem deathParticleSystem;
 
     public void Damaged(float damageAmount)
     {
@@ -18,6 +19,9 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        Destroy(gameObject);
+        deathParticleSystem.Play();
+        GetComponent<Collider>().enabled = false;
+        GetComponent<MeshRenderer>().enabled = false;
+        Destroy(gameObject, 2f);
     }
 }
