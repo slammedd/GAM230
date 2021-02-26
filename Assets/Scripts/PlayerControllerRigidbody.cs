@@ -144,8 +144,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
         if (Input.GetKeyUp("space"))
         {
             coyoteCounter = -1;
-        }
-           
+        }          
     }
 
     void Dash()

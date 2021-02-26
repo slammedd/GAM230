@@ -1069,7 +1069,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14222
+  m_Name: pb_Mesh14228
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12618,6 +12618,14 @@ PrefabInstance:
       propertyPath: weaponAnimatior
       value: 
       objectReference: {fileID: 1116011287}
+    - target: {fileID: 1912015043, guid: 31fdc5d7ac54962419267eab28c73ada, type: 3}
+      propertyPath: maxSway
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912015043, guid: 31fdc5d7ac54962419267eab28c73ada, type: 3}
+      propertyPath: smoothing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2726120554478555265, guid: 31fdc5d7ac54962419267eab28c73ada,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -2,17 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shoot : MonoBehaviour
+public class Weapon : MonoBehaviour
 {
     public float damage;
     public float range;
     public float impactForce;
-    public float fireRate; 
+    public float fireRate;
+    public float maxSway;
+    public float smoothing;
     public Camera playerCamera;
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
     public Animator weaponAnimatior;
+    
     private float fireCooldown = 0;
+    private Vector3 originPosition;
+
+    private void Start()
+    {
+        originPosition = transform.localPosition;
+    }
 
     private void Update()
     {
@@ -21,7 +30,9 @@ public class Shoot : MonoBehaviour
             fireCooldown = Time.time + 1 / fireRate;
             weaponAnimatior.SetTrigger("Trigger");
             Shot();
-        }               
+        }
+
+        WeaponSway();
     }
 
     void Shot()
@@ -46,8 +57,17 @@ public class Shoot : MonoBehaviour
             {
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
             }
-        }
-
-      
+        }      
     } 
+
+    void WeaponSway()
+    {
+        float movementX = -Input.GetAxis("Mouse X");
+        float movementY = Input.GetAxis("Mouse Y");
+        movementX = Mathf.Clamp(movementX, -maxSway, maxSway);
+        movementY = Mathf.Clamp(movementY, -maxSway, maxSway);
+
+        Vector3 finalPosition = new Vector3(movementX, movementY, 0);
+        transform.localPosition = Vector3.Lerp(transform.localPosition, finalPosition + originPosition, Time.deltaTime * smoothing);
+    }
 }
