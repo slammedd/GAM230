@@ -9,7 +9,7 @@ public class Weapon : MonoBehaviour
     public float impactForce;
     public float fireRate;
     public float maxSway;
-    public float smoothing;
+    public float swaySmoothing;
     public Camera playerCamera;
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
@@ -68,6 +68,6 @@ public class Weapon : MonoBehaviour
         movementY = Mathf.Clamp(movementY, -maxSway, maxSway);
 
         Vector3 finalPosition = new Vector3(movementX, movementY, 0);
-        transform.localPosition = Vector3.Lerp(transform.localPosition, finalPosition + originPosition, Time.deltaTime * smoothing);
+        transform.localPosition = Vector3.Lerp(transform.localPosition, finalPosition + originPosition, Time.deltaTime * swaySmoothing);
     }
 }

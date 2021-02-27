@@ -21,7 +21,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
 
     public float maxFOV;
 
-    public float FOVTime;
+    public float FOVChangeTime;
 
     public float FOVReturnTime;
 
@@ -78,7 +78,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
         CameraFOV();
         VelocityCap();
     }
-
+   
     private void FixedUpdate()
     {
         PlayerMovement();
@@ -189,12 +189,12 @@ public class PlayerControllerRigidbody : MonoBehaviour
 
     void CameraFOV()
     {
-        if(rb.velocity.magnitude > 10)
+        if(rb.velocity.magnitude > 8)
         {
-            playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, maxFOV, FOVTime);
+            playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, maxFOV, FOVChangeTime);
         }
 
-        else if (rb.velocity.magnitude < 9.5)
+        else if (rb.velocity.magnitude < 7)
         {            
             playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, minFOV, FOVReturnTime);
         }
