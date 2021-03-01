@@ -14,7 +14,9 @@ public class Weapon : MonoBehaviour
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
     public Animator weaponAnimatior;
-    
+    public AudioSource source;
+    public AudioClip fireSound;
+
     private float fireCooldown = 0;
     private Vector3 originPosition;
 
@@ -30,6 +32,7 @@ public class Weapon : MonoBehaviour
             fireCooldown = Time.time + 1 / fireRate;
             weaponAnimatior.SetTrigger("Trigger");
             Shot();
+            source.PlayOneShot(fireSound);
         }
 
         WeaponSway();

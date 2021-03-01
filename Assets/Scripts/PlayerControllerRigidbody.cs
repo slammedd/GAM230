@@ -6,67 +6,43 @@ public class PlayerControllerRigidbody : MonoBehaviour
 {
 
     public float movementSpeed;
-
     public float maxSpeed;
+    public float sensitivity;
+    public Camera playerCamera;
+    public float minFOV;
+    public float maxFOV;
+    public float FOVChangeTime;
+    public float FOVReturnTime;
+    public Transform groundCheck;
+    [HideInInspector] public bool isGrounded;
+    public LayerMask ground;
+    public float jumpForce;
+    public float coyoteTime;
+    public float jumpBufferLength;
+    public float dashForce;
+    [HideInInspector] public bool hasDashed;
+    public float slideForce;
+    public float slideTime;
+    public float slideJumpMultiplier;
 
     Rigidbody rb;
-
-    public float sensitivity;
-
     private float yValue;
-
-    public Camera playerCamera;
-
-    public float minFOV;
-
-    public float maxFOV;
-
-    public float FOVChangeTime;
-
-    public float FOVReturnTime;
-
-    public Transform groundCheck;
-
-    [HideInInspector] public bool isGrounded;
-
     private float checkRadius = 0.2f;
-
-    public LayerMask ground;
-
-    public float jumpForce;
-
-    public float coyoteTime;
-
     private float coyoteCounter;
-
-    public float jumpBufferLength;
-
     private float jumpBufferCount;
-
-    public float dashForce;
-
-    [HideInInspector] public bool hasDashed;
-
     CapsuleCollider playerCollider;
-
-    float colliderHeight;
-   
-    public float slideForce;
-
-    public float slideTime;
-
+    float colliderHeight;   
     private float slideHeightDecrease = 1f;
-
     private bool isSliding;
 
-    public float slideJumpMultiplier;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         playerCollider = GetComponent<CapsuleCollider>();
         colliderHeight = playerCollider.height;
-        Cursor.lockState = CursorLockMode.Locked;        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void Update()

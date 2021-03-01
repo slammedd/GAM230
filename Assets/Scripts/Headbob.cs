@@ -5,12 +5,16 @@ using UnityEngine;
 public class Headbob : MonoBehaviour
 {
     public Animation anim;
+    public AudioClip[] footstepClips;
+    
     private bool isWalking;
     private bool left;
-    private bool right;  
+    private bool right;
+    private AudioSource source;
 
     private void Start()
     {
+        source = GetComponent<AudioSource>();
         left = true;
         right = false;
     }
@@ -42,6 +46,8 @@ public class Headbob : MonoBehaviour
             if (left)
             {
                 anim.Play("WalkLeft");
+                AudioClip clip = RandomClip();
+                source.PlayOneShot(clip);
                 left = false;
                 right = true;
             }
@@ -49,10 +55,17 @@ public class Headbob : MonoBehaviour
             if (right)
             {
                 anim.Play("WalkRight");
+                AudioClip clip = RandomClip();
+                source.PlayOneShot(clip);
                 right = false;
                 left = true;
             }
         }
+    }
+
+    private AudioClip RandomClip()
+    {
+        return footstepClips[UnityEngine.Random.Range(0, footstepClips.Length)];
     }
 
 }

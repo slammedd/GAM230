@@ -5,9 +5,7 @@ using UnityEngine;
 public class LedgeGrab : MonoBehaviour
 {
     public Rigidbody rb;
-
     public PlayerControllerRigidbody playerController;
-
     public float grabForce;
 
     private bool hasGrabbed;
