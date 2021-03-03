@@ -16,6 +16,7 @@ public class Weapon : MonoBehaviour
     public Animator weaponAnimatior;
     public AudioSource source;
     public AudioClip fireSound;
+    public AudioClip impactSound;
 
     private float fireCooldown = 0;
     private Vector3 originPosition;
@@ -45,6 +46,7 @@ public class Weapon : MonoBehaviour
 
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, range))
         {
+            source.PlayOneShot(impactSound);
             Enemy enemy = hit.transform.GetComponent<Enemy>();
 
             if (hit.transform.tag == "Enemy")

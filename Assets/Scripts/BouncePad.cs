@@ -6,6 +6,8 @@ public class BouncePad : MonoBehaviour
 {
     public Rigidbody playerRigidbody;
     public float bounceForce;
+    public AudioSource source;
+    public AudioClip bounceSound;
 
     private Vector3 movementDirection;
 
@@ -15,8 +17,9 @@ public class BouncePad : MonoBehaviour
         {
             Vector3 wallNormal = collision.contacts[0].normal;
             movementDirection = Vector3.Reflect(playerRigidbody.velocity, wallNormal).normalized;
-
             playerRigidbody.AddForce(movementDirection * bounceForce, ForceMode.Impulse);
+
+            source.PlayOneShot(bounceSound);
             
         }
     }

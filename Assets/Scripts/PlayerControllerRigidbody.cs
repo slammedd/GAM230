@@ -24,6 +24,10 @@ public class PlayerControllerRigidbody : MonoBehaviour
     public float slideForce;
     public float slideTime;
     public float slideJumpMultiplier;
+    public AudioSource source;
+    public AudioClip jumpSound;
+    public AudioClip slideSound;
+    public AudioClip dashSound;
 
     Rigidbody rb;
     private float yValue;
@@ -104,6 +108,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
         {
             Debug.Log("Jump");
             rb.velocity += new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
+            source.PlayOneShot(jumpSound);
             jumpBufferCount = 0;
         }
 
@@ -131,7 +136,8 @@ public class PlayerControllerRigidbody : MonoBehaviour
         if (Input.GetKeyDown("left shift") && !hasDashed && !isGrounded)
         {
             Debug.Log("Dash");
-            rb.AddRelativeForce(new Vector3(0 , 5 , dashForce), ForceMode.VelocityChange);            
+            rb.AddRelativeForce(new Vector3(0 , 5 , dashForce), ForceMode.VelocityChange);
+            source.PlayOneShot(dashSound);
             hasDashed = true;
         }        
     }
@@ -142,6 +148,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
         {
             Debug.Log("Slide");
             StartCoroutine(SlideMovement());
+            source.PlayOneShot(slideSound);
         }
 
         if (Input.GetKeyDown("space") && isSliding)
