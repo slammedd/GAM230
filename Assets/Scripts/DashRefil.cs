@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class DashRefil : MonoBehaviour
 {
-    public PlayerControllerRigidbody playerController;
     public AudioSource source;
     public AudioClip dashRefilSound;
+
+    private PlayerControllerRigidbody playerController;
+
+    private void Start()
+    {
+        playerController = GameObject.Find("Player").GetComponent<PlayerControllerRigidbody>();    
+    }
 
     private void OnTriggerEnter(Collider other)
     {

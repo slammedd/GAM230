@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class LedgeGrab : MonoBehaviour
 {
-    public Rigidbody rb;
-    public PlayerControllerRigidbody playerController;
     public float grabForce;
 
+    private PlayerControllerRigidbody playerController;
+    private Rigidbody rb;
     private bool hasGrabbed;
+
+    private void Start()
+    {
+        rb = GameObject.Find("Player").GetComponent<Rigidbody>();
+        playerController = GameObject.Find("Player").GetComponent<PlayerControllerRigidbody>();
+    }
 
     private void Update()
     {

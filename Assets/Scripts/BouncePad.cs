@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class BouncePad : MonoBehaviour
 {
-    public Rigidbody playerRigidbody;
     public float bounceForce;
     public AudioSource source;
     public AudioClip bounceSound;
 
+    private Rigidbody playerRigidbody;
     private Vector3 movementDirection;
+
+    private void Start()
+    {
+        playerRigidbody = GameObject.Find("Player").GetComponent<Rigidbody>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
