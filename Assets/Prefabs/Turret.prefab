@@ -56,10 +56,11 @@ MonoBehaviour:
   turretHead: {fileID: 7193684902845873137}
   rotationSmoothing: 10
   fireRate: 1.5
+  firePoint: {fileID: 7193684902591333636}
+  source: {fileID: 0}
+  shotSound: {fileID: 8300000, guid: 4ac7bb523553fcf4a82c7f9e5aebd2bc, type: 3}
   bulletPrefab: {fileID: 8807957648427788311, guid: becbc54f5ea2baa4d884735993eb6a78,
     type: 3}
-  firePoint: {fileID: 7193684902591333636}
-  dead: 0
 --- !u!65 &7193684902490785044
 BoxCollider:
   m_ObjectHideFlags: 0

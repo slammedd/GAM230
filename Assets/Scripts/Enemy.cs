@@ -10,13 +10,14 @@ public class Enemy : MonoBehaviour
     public float range;
     public Transform turretHead;
     public float rotationSmoothing;
+    public float fireRate;
+    public Transform firePoint;
+    public AudioSource source;
+    public AudioClip shotSound;
 
     private Transform player;
-
-    public float fireRate;
     private float fireCooldown = 0;
     public GameObject bulletPrefab;
-    public Transform firePoint;
     private bool canFire = true;
 
     private void Start()
@@ -70,6 +71,7 @@ public class Enemy : MonoBehaviour
     
     void Shoot()
     {
+        source.PlayOneShot(shotSound);
         fireCooldown = Time.time + 1 / fireRate;
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }

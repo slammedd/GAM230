@@ -5,13 +5,18 @@ using UnityEngine;
 public class TurretBullet : MonoBehaviour
 {
     public float bulletSpeed;
-    Rigidbody rb;
     public GameObject explosionParticleSystem;
-    private PlayerControllerRigidbody playerController;
     public float damageAmount;
+    public AudioClip impactObject;
+    public AudioClip impactPlayer;
+
+    private AudioSource source;
+    Rigidbody rb;
+    private PlayerControllerRigidbody playerController;
 
     private void Start()
     {
+        source = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
         rb.velocity = (transform.forward * bulletSpeed);        
         StartCoroutine(DestroyBullet());
@@ -20,9 +25,15 @@ public class TurretBullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        explosionParticleSystem.SetActive(true);
+        source.PlayOneShot(impactObject);
+        GetComponent<MeshRenderer>().enabled = false;
+        GetComponent<Collider>().enabled = false;
+
         if (collision.gameObject.CompareTag("Player"))
         {
             explosionParticleSystem.SetActive(true);
+            source.PlayOneShot(impactPlayer);
             GetComponent<MeshRenderer>().enabled = false;
             GetComponent<Collider>().enabled = false;
             playerController.health -= damageAmount;
