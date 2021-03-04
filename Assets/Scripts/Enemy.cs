@@ -7,11 +7,17 @@ public class Enemy : MonoBehaviour
     public float health;
     public ParticleSystem deathParticleSystem;
     public GameObject[] attachedObjects;
-
-    private Transform player;
     public float range;
     public Transform turretHead;
     public float rotationSmoothing;
+
+    private Transform player;
+
+    public float fireRate;
+    private float fireCooldown = 0;
+    public GameObject bulletPrefab;
+    public Transform firePoint;
+    private bool canFire = true;
 
     private void Start()
     {
@@ -35,6 +41,7 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        canFire = false;
         deathParticleSystem.Play();
         GetComponent<Collider>().enabled = false;
         foreach(GameObject obj in attachedObjects)
@@ -53,7 +60,18 @@ public class Enemy : MonoBehaviour
             Quaternion turretRotation = Quaternion.LookRotation(direction);
             Vector3 newRotation = Quaternion.Lerp(turretHead.rotation, turretRotation, Time.deltaTime * rotationSmoothing).eulerAngles;
             turretHead.rotation = Quaternion.Euler (0, newRotation.y, 0);
+            
+            if(Time.time >= fireCooldown && canFire)
+            {
+                Shoot();
+            }
         }
+    }
+    
+    void Shoot()
+    {
+        fireCooldown = Time.time + 1 / fireRate;
+        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }
 
     private void OnDrawGizmosSelected()

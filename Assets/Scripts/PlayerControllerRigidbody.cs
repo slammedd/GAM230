@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerControllerRigidbody : MonoBehaviour
 {
-
+    public float health;
     public float movementSpeed;
     public float maxSpeed;
     public float sensitivity;
@@ -57,6 +57,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
         Slide();
         CameraFOV();
         VelocityCap();
+        health = Mathf.Clamp(health, 0, 100);
     }
    
     private void FixedUpdate()
@@ -106,7 +107,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
 
         if (jumpBufferCount >= 0 && coyoteCounter > 0 && !isSliding)
         {
-            Debug.Log("Jump");
+            //Debug.Log("Jump");
             rb.velocity += new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
             source.PlayOneShot(jumpSound);
             jumpBufferCount = 0;
@@ -135,7 +136,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
         
         if (Input.GetKeyDown("left shift") && !hasDashed && !isGrounded)
         {
-            Debug.Log("Dash");
+            //Debug.Log("Dash");
             rb.AddRelativeForce(new Vector3(0 , 5 , dashForce), ForceMode.VelocityChange);
             source.PlayOneShot(dashSound);
             hasDashed = true;
@@ -146,14 +147,14 @@ public class PlayerControllerRigidbody : MonoBehaviour
     {
         if (Input.GetKeyDown("left ctrl") && isGrounded && !isSliding)
         {
-            Debug.Log("Slide");
+            //Debug.Log("Slide");
             StartCoroutine(SlideMovement());
             source.PlayOneShot(slideSound);
         }
 
         if (Input.GetKeyDown("space") && isSliding)
         {
-            Debug.Log("Slide Jump");
+            //Debug.Log("Slide Jump");
             playerCollider.height = colliderHeight;
             rb.velocity += new Vector3(rb.velocity.x, jumpForce * slideJumpMultiplier, rb.velocity.z);
         }
@@ -188,6 +189,14 @@ public class PlayerControllerRigidbody : MonoBehaviour
         if(rb.velocity.magnitude > maxSpeed)
         {
             rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
+        }
+    }
+
+    void Health()
+    {
+        if(health <= 0)
+        {
+            Debug.Log("Player Died");
         }
     }
 

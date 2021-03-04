@@ -8,7 +8,8 @@ public class Weapon : MonoBehaviour
     public float range;
     public float impactForce;
     public float fireRate;
-    public float maxSway;
+    public float maxSwayX;
+    public float maxSwayY;
     public float swaySmoothing;
     public Camera playerCamera;
     public ParticleSystem muzzleFlash;
@@ -69,8 +70,8 @@ public class Weapon : MonoBehaviour
     {
         float movementX = -Input.GetAxis("Mouse X");
         float movementY = Input.GetAxis("Mouse Y");
-        movementX = Mathf.Clamp(movementX, -maxSway, maxSway);
-        movementY = Mathf.Clamp(movementY, -maxSway, maxSway);
+        movementX = Mathf.Clamp(movementX, -maxSwayX, maxSwayX);
+        movementY = Mathf.Clamp(movementY, -maxSwayY, maxSwayY);
 
         Vector3 finalPosition = new Vector3(movementX, movementY, 0);
         transform.localPosition = Vector3.Lerp(transform.localPosition, finalPosition + originPosition, Time.deltaTime * swaySmoothing);
