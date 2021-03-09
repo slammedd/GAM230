@@ -19,11 +19,9 @@ public class SpawnManager : MonoBehaviour
         screenWipeAnimator = GameObject.Find("Screen Wipe").GetComponent<Animator>();
 
         GameObject.Find("Player").transform.position = spawnPoints[spawnCounter].position;
-
-        if(GameObject.Find("Player").transform.position == spawnPoints[0].position)
-        {
-            screenWipeAnimator.SetTrigger("Trigger");
-        }
+        GameObject.Find("Player").transform.rotation = spawnPoints[spawnCounter].rotation;
+               
+       screenWipeAnimator.SetBool("Trigger", true);        
     }
 
     private void Update()
@@ -37,8 +35,18 @@ public class SpawnManager : MonoBehaviour
 
         if (kill)
         {
-            GameObject.Find("Player").transform.position = spawnPoints[spawnCounter].position;
+            StartCoroutine(ScreenWipe());
         }
+
+    }
+    
+    IEnumerator ScreenWipe()
+    {
+        screenWipeAnimator.SetBool("Trigger", false);
+        yield return new WaitForSeconds(0.5f);       
+        GameObject.Find("Player").transform.position = spawnPoints[spawnCounter].position;
+        GameObject.Find("Player").transform.rotation = spawnPoints[spawnCounter].rotation;
+        screenWipeAnimator.SetBool("Trigger", true);
     }
 
 }
