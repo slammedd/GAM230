@@ -28,6 +28,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
     public AudioClip jumpSound;
     public AudioClip slideSound;
     public AudioClip dashSound;
+    [HideInInspector] public bool canMove;
 
     Rigidbody rb;
     private float yValue;
@@ -39,7 +40,6 @@ public class PlayerControllerRigidbody : MonoBehaviour
     private float slideHeightDecrease = 1f;
     private bool isSliding;
 
-
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -47,6 +47,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
         colliderHeight = playerCollider.height;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        canMove = true;
     }
 
     private void Update()
@@ -68,23 +69,29 @@ public class PlayerControllerRigidbody : MonoBehaviour
 
     void MouseLook()
     {
-        Vector2 mouseDirection = new Vector2(Input.GetAxis("Mouse X") * sensitivity, Input.GetAxis("Mouse Y") * sensitivity);
+        if (canMove)
+        {
+            Vector2 mouseDirection = new Vector2(Input.GetAxis("Mouse X") * sensitivity, Input.GetAxis("Mouse Y") * sensitivity);
 
-        yValue -= mouseDirection.y;
-        yValue = Mathf.Clamp(yValue, -75, 75);
+            yValue -= mouseDirection.y;
+            yValue = Mathf.Clamp(yValue, -75, 75);
 
-        playerCamera.transform.localEulerAngles = Vector3.right * yValue;
-        transform.Rotate(Vector3.up * mouseDirection.x);
+            playerCamera.transform.localEulerAngles = Vector3.right * yValue;
+            transform.Rotate(Vector3.up * mouseDirection.x);
+        }
     }
 
     void PlayerMovement()
     {
-        float x = Input.GetAxis("Horizontal") * movementSpeed;
-        float z = Input.GetAxis("Vertical") * movementSpeed;
-      
-        Vector3 Movement = new Vector3(x, 0, z);
-        Vector3 newPos = rb.position + rb.transform.TransformDirection(Movement);
-        rb.MovePosition(newPos);   
+        if (canMove)
+        {
+            float x = Input.GetAxis("Horizontal") * movementSpeed;
+            float z = Input.GetAxis("Vertical") * movementSpeed;
+
+            Vector3 Movement = new Vector3(x, 0, z);
+            Vector3 newPos = rb.position + rb.transform.TransformDirection(Movement);
+            rb.MovePosition(newPos);
+        }    
     }
 
     void Jump()

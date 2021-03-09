@@ -6,22 +6,24 @@ public class SpawnManager : MonoBehaviour
 {
     public LayerMask acid;
     public Transform[] spawnPoints;
+    public GameObject playerCamera;
 
     private float checkRadius = 0.2f;
     private bool kill;
     private Transform acidCheck;
     private Animator screenWipeAnimator;
     private int spawnCounter = 0;
+    private PlayerControllerRigidbody playerController;
 
     private void Start()
     {
         acidCheck = GameObject.Find("Player").GetComponent<PlayerControllerRigidbody>().groundCheck;
         screenWipeAnimator = GameObject.Find("Screen Wipe").GetComponent<Animator>();
+        playerController = GameObject.Find("Player").GetComponent<PlayerControllerRigidbody>();
 
         GameObject.Find("Player").transform.position = spawnPoints[spawnCounter].position;
         GameObject.Find("Player").transform.rotation = spawnPoints[spawnCounter].rotation;
-               
-       screenWipeAnimator.SetBool("Trigger", true);        
+        screenWipeAnimator.SetBool("Trigger", true);        
     }
 
     private void Update()
@@ -42,11 +44,13 @@ public class SpawnManager : MonoBehaviour
     
     IEnumerator ScreenWipe()
     {
+        playerController.canMove = false;   
         screenWipeAnimator.SetBool("Trigger", false);
         yield return new WaitForSeconds(0.5f);       
         GameObject.Find("Player").transform.position = spawnPoints[spawnCounter].position;
         GameObject.Find("Player").transform.rotation = spawnPoints[spawnCounter].rotation;
         screenWipeAnimator.SetBool("Trigger", true);
+        playerController.canMove = true;
     }
 
 }
