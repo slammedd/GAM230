@@ -1975,6 +1975,7 @@ MonoBehaviour:
     m_Bits: 512
   spawnPoints:
   - {fileID: 1605082832}
+  playerCamera: {fileID: 1124585375}
 --- !u!4 &372079077
 Transform:
   m_ObjectHideFlags: 0
@@ -8685,6 +8686,12 @@ Transform:
   m_Father: {fileID: 232006380}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1124585375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2726120554789706765, guid: 31fdc5d7ac54962419267eab28c73ada,
+    type: 3}
+  m_PrefabInstance: {fileID: 1218219429}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1131056885
 Mesh:
   m_ObjectHideFlags: 0

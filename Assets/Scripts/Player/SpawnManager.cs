@@ -23,7 +23,8 @@ public class SpawnManager : MonoBehaviour
 
         GameObject.Find("Player").transform.position = spawnPoints[spawnCounter].position;
         GameObject.Find("Player").transform.rotation = spawnPoints[spawnCounter].rotation;
-        screenWipeAnimator.SetBool("Trigger", true);        
+
+        StartCoroutine(InitialScreenWipe());
     }
 
     private void Update()
@@ -39,9 +40,14 @@ public class SpawnManager : MonoBehaviour
         {
             StartCoroutine(ScreenWipe());
         }
-
     }
     
+    IEnumerator InitialScreenWipe()
+    {
+        yield return new WaitForSeconds(0.5f);
+        screenWipeAnimator.SetBool("Trigger", true);        
+    }
+
     IEnumerator ScreenWipe()
     {
         playerController.canMove = false;   
