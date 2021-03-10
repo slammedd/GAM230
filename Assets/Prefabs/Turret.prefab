@@ -54,8 +54,8 @@ MonoBehaviour:
   - {fileID: 7193684903067504719}
   range: 10
   turretHead: {fileID: 7193684902845873137}
-  rotationSmoothing: 10
-  fireRate: 1.5
+  rotationSmoothing: 100
+  fireRate: 3
   firePoint: {fileID: 7193684902591333636}
   source: {fileID: 0}
   shotSound: {fileID: 8300000, guid: 4ac7bb523553fcf4a82c7f9e5aebd2bc, type: 3}
