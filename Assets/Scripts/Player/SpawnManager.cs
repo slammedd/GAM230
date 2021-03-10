@@ -7,12 +7,12 @@ public class SpawnManager : MonoBehaviour
     public LayerMask acid;
     public Transform[] spawnPoints;
     public GameObject playerCamera;
+    public int spawnCounter = 0;
 
     private float checkRadius = 0.2f;
     private bool kill;
     private Transform acidCheck;
     private Animator screenWipeAnimator;
-    private int spawnCounter = 0;
     private PlayerControllerRigidbody playerController;
 
     private void Start()
