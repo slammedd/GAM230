@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     public Transform firePoint;
     public AudioSource source;
     public AudioClip shotSound;
+    public int roomNumber;
 
     private float actualHealth;
     private Transform player;
@@ -26,6 +27,7 @@ public class Enemy : MonoBehaviour
     {
         player = GameObject.Find("Player").transform;
         spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
+        actualHealth = health;
     }
 
     private void Update()
@@ -36,6 +38,17 @@ public class Enemy : MonoBehaviour
         {
             Respawn();
         }
+
+        if(spawnManager.spawnCounter == roomNumber)
+        {
+            canFire = true;
+        }
+
+        else
+        {
+            canFire = false;
+        }
+        
     }
 
     public void Damaged(float damageAmount)
