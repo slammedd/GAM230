@@ -29,6 +29,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
     public AudioClip slideSound;
     public AudioClip dashSound;
     [HideInInspector] public bool canMove;
+    [HideInInspector] public bool dashUnlocked;
 
     Rigidbody rb;
     private float yValue;
@@ -54,7 +55,12 @@ public class PlayerControllerRigidbody : MonoBehaviour
     {
         MouseLook();
         Jump();
-        Dash();
+
+        if (dashUnlocked)
+        {
+            Dash();
+        }
+
         Slide();
         CameraFOV();
         VelocityCap();
