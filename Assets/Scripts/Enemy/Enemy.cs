@@ -15,26 +15,34 @@ public class Enemy : MonoBehaviour
     public AudioSource source;
     public AudioClip shotSound;
 
+    private float actualHealth;
     private Transform player;
     private float fireCooldown = 0;
     public GameObject bulletPrefab;
     private bool canFire = true;
+    private SpawnManager spawnManager;
 
     private void Start()
     {
         player = GameObject.Find("Player").transform;
+        spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
     }
 
     private void Update()
     {
         FindPlayer();
+
+        if (spawnManager.kill)
+        {
+            Respawn();
+        }
     }
 
     public void Damaged(float damageAmount)
     {
-        health -= damageAmount;
+        actualHealth -= damageAmount;
         
-        if(health <= 0)
+        if(actualHealth <= 0)
         {           
             Die();
         }
@@ -49,7 +57,17 @@ public class Enemy : MonoBehaviour
         {
             obj.SetActive(false);
         }      
-        Destroy(gameObject, 2f);
+    }
+
+    void Respawn()
+    {
+        actualHealth = health;
+        canFire = true;
+        GetComponent<Collider>().enabled = true;
+        foreach (GameObject obj in attachedObjects)
+        {
+            obj.SetActive(true);
+        }
     }
 
     void FindPlayer()

@@ -8,9 +8,9 @@ public class SpawnManager : MonoBehaviour
     public Transform[] spawnPoints;
     public GameObject playerCamera;
     public int spawnCounter = 0;
+    [HideInInspector]public bool kill;
 
     private float checkRadius = 0.2f;
-    private bool kill;
     private Transform acidCheck;
     private Animator screenWipeAnimator;
     private PlayerControllerRigidbody playerController;

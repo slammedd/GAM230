@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6502279574148919201}
   - component: {fileID: 6502279574148919202}
   - component: {fileID: 174887294}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bounce Pad Weak
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -13,6 +13,7 @@ public class TurretBullet : MonoBehaviour
     private AudioSource source;
     Rigidbody rb;
     private PlayerControllerRigidbody playerController;
+    private SpawnManager spawnManager;
 
     private void Start()
     {
@@ -21,6 +22,15 @@ public class TurretBullet : MonoBehaviour
         rb.velocity = (transform.forward * bulletSpeed);        
         StartCoroutine(DestroyBullet());
         playerController = GameObject.Find("Player").GetComponent<PlayerControllerRigidbody>();
+        spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
+    }
+
+    private void Update()
+    {
+        if (spawnManager.kill)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
