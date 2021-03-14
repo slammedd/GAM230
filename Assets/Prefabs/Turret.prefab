@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7193684902490785051}
   - component: {fileID: 7193684902490785050}
   - component: {fileID: 7193684902490785044}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Turret
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7193684902591333636}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fire Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7193684902845873137}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Turret Top
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 7193684903033854970}
   - component: {fileID: 7193684903033854969}
   - component: {fileID: 7193684903033854968}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -445,7 +445,7 @@ GameObject:
   - component: {fileID: 7193684903067504708}
   - component: {fileID: 7193684903067504715}
   - component: {fileID: 7193684903067504714}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Base
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -772,7 +772,7 @@ GameObject:
   - component: {fileID: 7193684903082042622}
   - component: {fileID: 7193684903082042621}
   - component: {fileID: 7193684903082042620}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1066,6 +1066,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Death Smoke (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630807530830247672, guid: c6d5edbc7f3be9740bc7fc031ba61507,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6630807530830247673, guid: c6d5edbc7f3be9740bc7fc031ba61507,
         type: 3}
