@@ -32,7 +32,7 @@ public class SpawnManager : MonoBehaviour
         Kill();
     }
 
-    void Kill()
+    public void Kill()
     {
         kill = Physics.CheckSphere(acidCheck.position, checkRadius, acid);
 
@@ -48,7 +48,7 @@ public class SpawnManager : MonoBehaviour
         screenWipeAnimator.SetBool("Trigger", true);        
     }
 
-    IEnumerator ScreenWipe()
+    public IEnumerator ScreenWipe()
     {
         playerController.canMove = false;   
         screenWipeAnimator.SetBool("Trigger", false);
@@ -58,6 +58,7 @@ public class SpawnManager : MonoBehaviour
         screenWipeAnimator.SetBool("Trigger", true);
         yield return new WaitForSeconds(0.8f);
         playerController.canMove = true;
+        playerController.movementTimer = 3f;
     }
 
 }

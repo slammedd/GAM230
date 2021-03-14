@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI room;
     public TextMeshProUGUI kills;
+    public Slider movementSlider;
     public Text dashText;
     [HideInInspector] public int roomNumber;
     [HideInInspector] public int killNumber;
@@ -32,6 +33,8 @@ public class UIManager : MonoBehaviour
         room.text = roomNumber.ToString();
 
         kills.text = killNumber.ToString();
+
+        movementSlider.value = playerController.movementTimer;
 
         if (playerController.dashUnlocked && canAnimate)
         {
