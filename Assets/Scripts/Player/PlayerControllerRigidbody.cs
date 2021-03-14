@@ -217,6 +217,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
         if(health <= 0)
         {
             Debug.Log("Player Died");
+            Application.Quit();
         }
     }
 
