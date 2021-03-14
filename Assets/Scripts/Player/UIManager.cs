@@ -8,8 +8,10 @@ public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI room;
+    public TextMeshProUGUI kills;
     public Text dashText;
     [HideInInspector] public int roomNumber;
+    [HideInInspector] public int killNumber;
 
     private PlayerControllerRigidbody playerController;
     private NextSpawnPoint nextSpawn;
@@ -28,6 +30,8 @@ public class UIManager : MonoBehaviour
         healthText.text = playerController.health.ToString() + "%";
 
         room.text = roomNumber.ToString();
+
+        kills.text = killNumber.ToString();
 
         if (playerController.dashUnlocked && canAnimate)
         {

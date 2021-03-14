@@ -23,12 +23,14 @@ public class Enemy : MonoBehaviour
     private bool canFire = true;
     private SpawnManager spawnManager;
     private bool inRoom;
+    private UIManager uiManager;
 
     private void Start()
     {
         player = GameObject.Find("Player").transform;
         spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
         actualHealth = health;
+        uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
     }
 
     private void Update()
@@ -64,6 +66,7 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        uiManager.killNumber++;
         canFire = false;
         deathParticleSystem.Play();
         GetComponent<Collider>().enabled = false;
