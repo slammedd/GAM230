@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
     public GameObject bulletPrefab;
     private bool canFire = true;
     private SpawnManager spawnManager;
+    private bool inRoom;
 
     private void Start()
     {
@@ -41,12 +42,12 @@ public class Enemy : MonoBehaviour
 
         if(spawnManager.spawnCounter == roomNumber)
         {
-            canFire = true;
+            inRoom = true;
         }
 
         else
         {
-            canFire = false;
+            inRoom = false;
         }
         
     }
@@ -93,7 +94,7 @@ public class Enemy : MonoBehaviour
             Vector3 newRotation = Quaternion.Lerp(turretHead.rotation, turretRotation, Time.deltaTime * rotationSmoothing).eulerAngles;
             turretHead.rotation = Quaternion.Euler (0, newRotation.y, 0);
             
-            if(Time.time >= fireCooldown && canFire)
+            if(Time.time >= fireCooldown && canFire && inRoom)
             {
                 Shoot();
             }
