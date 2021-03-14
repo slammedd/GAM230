@@ -56,6 +56,7 @@ public class SpawnManager : MonoBehaviour
         GameObject.Find("Player").transform.position = spawnPoints[spawnCounter].position;
         GameObject.Find("Player").transform.rotation = spawnPoints[spawnCounter].rotation;
         screenWipeAnimator.SetBool("Trigger", true);
+        yield return new WaitForSeconds(0.8f);
         playerController.canMove = true;
     }
 

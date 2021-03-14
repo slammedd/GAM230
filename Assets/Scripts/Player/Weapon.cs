@@ -21,15 +21,17 @@ public class Weapon : MonoBehaviour
 
     private float fireCooldown = 0;
     private Vector3 originPosition;
+    private PlayerControllerRigidbody playerController;
 
     private void Start()
     {
         originPosition = transform.localPosition;
+        playerController = GameObject.Find("Player").GetComponent<PlayerControllerRigidbody>();
     }
 
     private void Update()
     {
-        if (Input.GetMouseButton(0) && Time.time >= fireCooldown)
+        if (Input.GetMouseButton(0) && Time.time >= fireCooldown && playerController.canMove)
         {
             fireCooldown = Time.time + 1 / fireRate;
             weaponAnimatior.SetTrigger("Trigger");
