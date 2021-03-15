@@ -15,6 +15,7 @@ public class SpawnManager : MonoBehaviour
     private Animator screenWipeAnimator;
     private PlayerControllerRigidbody playerController;
     private UIManager uiManager;
+    private bool isRunning;
 
     private void Start()
     {
@@ -38,9 +39,9 @@ public class SpawnManager : MonoBehaviour
     {
         kill = Physics.CheckSphere(acidCheck.position, checkRadius, acid);
 
-        if (kill)
+        if (kill && !isRunning)
         {
-            StartCoroutine(ScreenWipe());
+            StartCoroutine(ScreenWipe());       
         }
     }
     
@@ -52,16 +53,18 @@ public class SpawnManager : MonoBehaviour
 
     public IEnumerator ScreenWipe()
     {
+        isRunning = true;
         playerController.canMove = false;   
         screenWipeAnimator.SetBool("Trigger", false);
         yield return new WaitForSeconds(0.5f);       
         GameObject.Find("Player").transform.position = spawnPoints[spawnCounter].position;
         GameObject.Find("Player").transform.rotation = spawnPoints[spawnCounter].rotation;
         screenWipeAnimator.SetBool("Trigger", true);
+        playerController.health -= 10;
         yield return new WaitForSeconds(0.8f);
-        playerController.canMove = true;
         uiManager.actualTimer = uiManager.roomTimer;
-        
+        playerController.canMove = true;
+        isRunning = false;
     }
 
 }

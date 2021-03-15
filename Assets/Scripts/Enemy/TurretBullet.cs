@@ -6,7 +6,7 @@ public class TurretBullet : MonoBehaviour
 {
     public float bulletSpeed;
     public GameObject explosionParticleSystem;
-    public float damageAmount;
+    public int damageAmount;
     public AudioClip impactObject;
     public AudioClip impactPlayer;
 

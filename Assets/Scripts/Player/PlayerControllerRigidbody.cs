@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerControllerRigidbody : MonoBehaviour
 {
-    public float health;
+    public int health;
     public float movementSpeed;
     public float maxSpeed;
     public float sensitivity;
