@@ -9,21 +9,26 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI room;
     public TextMeshProUGUI kills;
-    public Slider movementSlider;
+    public Slider timerSlider;
     public Text dashText;
     [HideInInspector] public int roomNumber;
     [HideInInspector] public int killNumber;
+    public float roomTimer;
+    [HideInInspector] public float actualTimer = 100f;
 
     private PlayerControllerRigidbody playerController;
     private NextSpawnPoint nextSpawn;
     private Animator dashAnimatior;
     private bool canAnimate = true;
+    private SpawnManager spawnManager;
 
     private void Start()
     {
         playerController = GameObject.Find("Player").GetComponent<PlayerControllerRigidbody>();
         dashAnimatior = GameObject.Find("Dash Text").GetComponent<Animator>();
+        spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
         roomNumber++;
+        actualTimer = roomTimer;
     }
 
     private void Update()
@@ -34,7 +39,14 @@ public class UIManager : MonoBehaviour
 
         kills.text = killNumber.ToString();
 
-        movementSlider.value = playerController.movementTimer;
+        actualTimer -= Time.deltaTime;
+
+        if(actualTimer <= 0)
+        {
+            StartCoroutine(spawnManager.GetComponent<SpawnManager>().ScreenWipe());           
+        }
+
+        timerSlider.value = actualTimer;
 
         if (playerController.dashUnlocked && canAnimate)
         {

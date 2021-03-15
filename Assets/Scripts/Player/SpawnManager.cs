@@ -14,12 +14,14 @@ public class SpawnManager : MonoBehaviour
     private Transform acidCheck;
     private Animator screenWipeAnimator;
     private PlayerControllerRigidbody playerController;
+    private UIManager uiManager;
 
     private void Start()
     {
         acidCheck = GameObject.Find("Player").GetComponent<PlayerControllerRigidbody>().groundCheck;
         screenWipeAnimator = GameObject.Find("Screen Wipe").GetComponent<Animator>();
         playerController = GameObject.Find("Player").GetComponent<PlayerControllerRigidbody>();
+        uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
 
         GameObject.Find("Player").transform.position = spawnPoints[spawnCounter].position;
         GameObject.Find("Player").transform.rotation = spawnPoints[spawnCounter].rotation;
@@ -58,7 +60,8 @@ public class SpawnManager : MonoBehaviour
         screenWipeAnimator.SetBool("Trigger", true);
         yield return new WaitForSeconds(0.8f);
         playerController.canMove = true;
-        playerController.movementTimer = 3f;
+        uiManager.actualTimer = uiManager.roomTimer;
+        
     }
 
 }

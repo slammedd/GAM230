@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -5.0439987, y: -0.0023038387}
-  m_SizeDelta: {x: -0.087371826, y: -0.004580021}
+  m_AnchoredPosition: {x: -4.97, y: -0.0023038387}
+  m_SizeDelta: {x: 0, y: -0.004580021}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7763543714918776278
 CanvasRenderer:
@@ -7120,7 +7120,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 3.9, y: -0.006000519}
+  m_AnchoredPosition: {x: 4.2, y: -0.006000519}
   m_SizeDelta: {x: -13.485596, y: -3.1870575}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4277999281451241425
@@ -7313,7 +7313,6 @@ MonoBehaviour:
   dashSound: {fileID: 8300000, guid: 11967cdc124f96d4b83e6245ecdbcea5, type: 3}
   canMove: 0
   dashUnlocked: 0
-  movementTimer: 0
 --- !u!1 &4277999282295446312
 GameObject:
   m_ObjectHideFlags: 0
@@ -7355,7 +7354,7 @@ GameObject:
   - component: {fileID: 4893439986123036816}
   - component: {fileID: 4116637079607421615}
   m_Layer: 5
-  m_Name: Movement Slider
+  m_Name: Timer Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7426,9 +7425,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 3
+  m_MaxValue: 80
   m_WholeNumbers: 0
-  m_Value: 3
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

@@ -30,7 +30,6 @@ public class PlayerControllerRigidbody : MonoBehaviour
     public AudioClip dashSound;
     [HideInInspector] public bool canMove;
     [HideInInspector] public bool dashUnlocked;
-    [HideInInspector] public float movementTimer;
 
     Rigidbody rb;
     private float yValue;
@@ -41,7 +40,6 @@ public class PlayerControllerRigidbody : MonoBehaviour
     float colliderHeight;   
     private float slideHeightDecrease = 1f;
     private bool isSliding;
-    private SpawnManager spawnManager;
 
     private void Start()
     {
@@ -51,8 +49,6 @@ public class PlayerControllerRigidbody : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         canMove = true;
-        spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
-        movementTimer = 3f;
     }
 
     private void Update()
@@ -70,7 +66,6 @@ public class PlayerControllerRigidbody : MonoBehaviour
         VelocityCap();
         health = Mathf.Clamp(health, 0, 100);
         Health();
-        MovementTimer();
     }
    
     private void FixedUpdate()
@@ -220,23 +215,4 @@ public class PlayerControllerRigidbody : MonoBehaviour
             Application.Quit();
         }
     }
-
-    void MovementTimer()
-    {
-        if(Input.GetAxis("Horizontal") != 0 | Input.GetAxis("Vertical") != 0)
-        {
-            movementTimer = 3f;
-        }
-
-        else
-        {
-            movementTimer -= Time.deltaTime;
-        }
-
-        if(movementTimer <= 0.1f)
-        {
-            StartCoroutine(spawnManager.GetComponent<SpawnManager>().ScreenWipe());
-        }
-    }
-
 }
