@@ -18,8 +18,7 @@ public class Door : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            doorAnimator.SetBool("Trigger", false);
-            GetComponent<Collider>().enabled = false;
+            doorAnimator.SetBool("Trigger", false);            
         }
     }
 }

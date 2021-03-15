@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class NextSpawnPoint : MonoBehaviour
 {
+    public Collider doorCollider;
+
     private SpawnManager spawnManager;
     private UIManager uiManager;
 
@@ -21,6 +23,8 @@ public class NextSpawnPoint : MonoBehaviour
             uiManager.roomNumber++;
             uiManager.actualTimer = uiManager.roomTimer;
             gameObject.SetActive(false);
+            doorCollider.enabled = false;
         }
     }
 }
+
