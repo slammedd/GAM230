@@ -5,6 +5,7 @@ using UnityEngine;
 public class NextSpawnPoint : MonoBehaviour
 {
     public Collider doorCollider;
+    public int roomCompleteScore;
 
     private SpawnManager spawnManager;
     private UIManager uiManager;
@@ -22,6 +23,7 @@ public class NextSpawnPoint : MonoBehaviour
             spawnManager.spawnCounter++;
             uiManager.roomNumber++;
             uiManager.actualTimer = uiManager.roomTimer;
+            uiManager.score += roomCompleteScore;
             gameObject.SetActive(false);
             doorCollider.enabled = false;
         }

@@ -10,15 +10,18 @@ public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI room;
+    public float roomTimer;
     public TextMeshProUGUI kills;
     public Slider timerSlider;
     public TextMeshProUGUI diedText;
     public GameObject retryButton;
+    public TextMeshProUGUI scoreText;
+    public ScorePowerup scorePowerup;
     public Text dashText;
-    public float roomTimer;
     [HideInInspector] public int roomNumber;
     [HideInInspector] public int killNumber;
     [HideInInspector] public float actualTimer = 100f;
+    [HideInInspector] public int score;
 
     private PlayerControllerRigidbody playerController;
     private NextSpawnPoint nextSpawn;
@@ -42,6 +45,9 @@ public class UIManager : MonoBehaviour
         room.text = roomNumber.ToString();
 
         kills.text = killNumber.ToString();
+
+        scoreText.text = score.ToString();
+        score = Mathf.Clamp(score, 0, 9999);
 
         actualTimer -= Time.deltaTime;
 

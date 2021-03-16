@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     public AudioSource source;
     public AudioClip shotSound;
     public int roomNumber;
+    public int killScoreIncrease;
 
     private float actualHealth;
     private Transform player;
@@ -67,6 +68,7 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         uiManager.killNumber++;
+        uiManager.score += killScoreIncrease;
         canFire = false;
         deathParticleSystem.Play();
         GetComponent<Collider>().enabled = false;
