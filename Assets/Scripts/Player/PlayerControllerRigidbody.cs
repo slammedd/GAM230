@@ -65,7 +65,6 @@ public class PlayerControllerRigidbody : MonoBehaviour
         //CameraFOV();
         VelocityCap();
         health = Mathf.Clamp(health, 0, 100);
-        Health();
     }
    
     private void FixedUpdate()
@@ -207,12 +206,4 @@ public class PlayerControllerRigidbody : MonoBehaviour
         }
     }
 
-    void Health()
-    {
-        if(health <= 0)
-        {
-            Debug.Log("Player Died");
-            Application.Quit();
-        }
-    }
 }

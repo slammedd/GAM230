@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour
 {
@@ -10,10 +12,12 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI room;
     public TextMeshProUGUI kills;
     public Slider timerSlider;
+    public TextMeshProUGUI diedText;
+    public GameObject retryButton;
     public Text dashText;
+    public float roomTimer;
     [HideInInspector] public int roomNumber;
     [HideInInspector] public int killNumber;
-    public float roomTimer;
     [HideInInspector] public float actualTimer = 100f;
 
     private PlayerControllerRigidbody playerController;
@@ -53,6 +57,27 @@ public class UIManager : MonoBehaviour
             StartCoroutine(DashTextAnimation());
             canAnimate = false;
         }
+
+        if(playerController.health <= 0)
+        {
+            Retry();
+        }
+    }
+
+    void Retry()
+    {
+        playerController.canMove = false;
+        spawnManager.screenWipeAnimator.SetBool("Trigger", false);
+        diedText.gameObject.SetActive(true);
+        retryButton.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene("Levels");
+        Debug.Log("reload");
     }
 
     IEnumerator DashTextAnimation()

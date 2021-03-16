@@ -8,11 +8,11 @@ public class SpawnManager : MonoBehaviour
     public Transform[] spawnPoints;
     public GameObject playerCamera;
     public int spawnCounter = 0;
-    [HideInInspector]public bool kill;
+    [HideInInspector] public bool kill;
+    [HideInInspector] public Animator screenWipeAnimator;
 
     private float checkRadius = 0.2f;
     private Transform acidCheck;
-    private Animator screenWipeAnimator;
     private PlayerControllerRigidbody playerController;
     private UIManager uiManager;
     private bool isRunning;
@@ -44,7 +44,7 @@ public class SpawnManager : MonoBehaviour
             StartCoroutine(ScreenWipe());       
         }
     }
-    
+
     IEnumerator InitialScreenWipe()
     {
         yield return new WaitForSeconds(0.5f);
@@ -54,17 +54,16 @@ public class SpawnManager : MonoBehaviour
     public IEnumerator ScreenWipe()
     {
         isRunning = true;
-        playerController.canMove = false;   
+        playerController.canMove = false;
         screenWipeAnimator.SetBool("Trigger", false);
-        yield return new WaitForSeconds(0.5f);       
+        yield return new WaitForSeconds(0.5f);
         GameObject.Find("Player").transform.position = spawnPoints[spawnCounter].position;
         GameObject.Find("Player").transform.rotation = spawnPoints[spawnCounter].rotation;
         screenWipeAnimator.SetBool("Trigger", true);
         playerController.health -= 10;
-        yield return new WaitForSeconds(0.8f);
         uiManager.actualTimer = uiManager.roomTimer;
+        yield return new WaitForSeconds(0.8f);
         playerController.canMove = true;
         isRunning = false;
     }
-
 }
