@@ -5948,12 +5948,14 @@ GameObject:
   - component: {fileID: 91494836}
   - component: {fileID: 91494835}
   - component: {fileID: 91494834}
+  - component: {fileID: 91494838}
+  - component: {fileID: 91494839}
   m_Layer: 9
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &91494833
 Transform:
@@ -6523,7 +6525,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 71c26d58e8752874588e103940d9fd15, type: 2}
+  - {fileID: 2100000, guid: 68bfaf6152c0ce048bc840fa1d18e3c1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6552,6 +6554,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91494832}
   m_Mesh: {fileID: 354808486}
+--- !u!114 &91494838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91494832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15dbd242b6f5454b9ac0aa0fc0f3a96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSpeed: 0.025
+  ySpeed: 0.025
+--- !u!95 &91494839
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91494832}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7050952da810a34408e256a195165c7e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!43 &93703842
 Mesh:
   m_ObjectHideFlags: 0
@@ -27886,12 +27921,14 @@ GameObject:
   - component: {fileID: 515556849}
   - component: {fileID: 515556848}
   - component: {fileID: 515556847}
+  - component: {fileID: 515556851}
+  - component: {fileID: 515556852}
   m_Layer: 9
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &515556846
 Transform:
@@ -28461,7 +28498,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 71c26d58e8752874588e103940d9fd15, type: 2}
+  - {fileID: 2100000, guid: 68bfaf6152c0ce048bc840fa1d18e3c1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -28490,6 +28527,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 515556845}
   m_Mesh: {fileID: 784387180}
+--- !u!114 &515556851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515556845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15dbd242b6f5454b9ac0aa0fc0f3a96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSpeed: 0.025
+  ySpeed: 0.025
+--- !u!95 &515556852
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515556845}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7050952da810a34408e256a195165c7e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &516625477
 GameObject:
   m_ObjectHideFlags: 0
@@ -55382,12 +55452,14 @@ GameObject:
   - component: {fileID: 990017043}
   - component: {fileID: 990017042}
   - component: {fileID: 990017041}
+  - component: {fileID: 990017045}
+  - component: {fileID: 990017046}
   m_Layer: 9
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &990017040
 Transform:
@@ -55957,7 +56029,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 71c26d58e8752874588e103940d9fd15, type: 2}
+  - {fileID: 2100000, guid: 68bfaf6152c0ce048bc840fa1d18e3c1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -55986,6 +56058,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 990017039}
   m_Mesh: {fileID: 742498225}
+--- !u!114 &990017045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990017039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15dbd242b6f5454b9ac0aa0fc0f3a96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSpeed: 0.025
+  ySpeed: 0.025
+--- !u!95 &990017046
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990017039}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7050952da810a34408e256a195165c7e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!43 &990479308
 Mesh:
   m_ObjectHideFlags: 0
@@ -63128,12 +63233,14 @@ GameObject:
   - component: {fileID: 1096949923}
   - component: {fileID: 1096949922}
   - component: {fileID: 1096949921}
+  - component: {fileID: 1096949925}
+  - component: {fileID: 1096949926}
   m_Layer: 9
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1096949920
 Transform:
@@ -63703,7 +63810,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 71c26d58e8752874588e103940d9fd15, type: 2}
+  - {fileID: 2100000, guid: 68bfaf6152c0ce048bc840fa1d18e3c1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -63732,6 +63839,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096949919}
   m_Mesh: {fileID: 2054015591}
+--- !u!114 &1096949925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096949919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15dbd242b6f5454b9ac0aa0fc0f3a96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSpeed: 0.025
+  ySpeed: 0.025
+--- !u!95 &1096949926
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096949919}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7050952da810a34408e256a195165c7e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1100456969
 GameObject:
   m_ObjectHideFlags: 0
@@ -68601,12 +68741,14 @@ GameObject:
   - component: {fileID: 1180042008}
   - component: {fileID: 1180042007}
   - component: {fileID: 1180042006}
+  - component: {fileID: 1180042011}
+  - component: {fileID: 1180042012}
   m_Layer: 9
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!64 &1180042006
 MeshCollider:
@@ -69162,7 +69304,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 71c26d58e8752874588e103940d9fd15, type: 2}
+  - {fileID: 2100000, guid: 68bfaf6152c0ce048bc840fa1d18e3c1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -69205,6 +69347,39 @@ Transform:
   m_Father: {fileID: 232006380}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1180042011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180042005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15dbd242b6f5454b9ac0aa0fc0f3a96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSpeed: 0.025
+  ySpeed: 0.025
+--- !u!95 &1180042012
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180042005}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7050952da810a34408e256a195165c7e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1181621594
 GameObject:
   m_ObjectHideFlags: 0
@@ -104606,12 +104781,14 @@ GameObject:
   - component: {fileID: 1887016708}
   - component: {fileID: 1887016707}
   - component: {fileID: 1887016706}
+  - component: {fileID: 1887016710}
+  - component: {fileID: 1887016711}
   m_Layer: 9
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1887016705
 Transform:
@@ -105181,7 +105358,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 71c26d58e8752874588e103940d9fd15, type: 2}
+  - {fileID: 2100000, guid: 68bfaf6152c0ce048bc840fa1d18e3c1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105210,6 +105387,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1887016704}
   m_Mesh: {fileID: 1321249828}
+--- !u!114 &1887016710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887016704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15dbd242b6f5454b9ac0aa0fc0f3a96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSpeed: 0.025
+  ySpeed: 0.025
+--- !u!95 &1887016711
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887016704}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7050952da810a34408e256a195165c7e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!43 &1891453015
 Mesh:
   m_ObjectHideFlags: 0
@@ -110598,12 +110808,14 @@ GameObject:
   - component: {fileID: 2024642950}
   - component: {fileID: 2024642949}
   - component: {fileID: 2024642948}
+  - component: {fileID: 2024642952}
+  - component: {fileID: 2024642953}
   m_Layer: 9
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2024642947
 Transform:
@@ -111173,7 +111385,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 71c26d58e8752874588e103940d9fd15, type: 2}
+  - {fileID: 2100000, guid: 68bfaf6152c0ce048bc840fa1d18e3c1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -111202,6 +111414,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024642946}
   m_Mesh: {fileID: 1494992796}
+--- !u!114 &2024642952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024642946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15dbd242b6f5454b9ac0aa0fc0f3a96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSpeed: 0.025
+  ySpeed: 0.025
+--- !u!95 &2024642953
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024642946}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7050952da810a34408e256a195165c7e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!43 &2024712036
 Mesh:
   m_ObjectHideFlags: 0
@@ -116140,12 +116385,14 @@ GameObject:
   - component: {fileID: 2094124837}
   - component: {fileID: 2094124836}
   - component: {fileID: 2094124835}
+  - component: {fileID: 2094124839}
+  - component: {fileID: 2094124840}
   m_Layer: 9
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2094124834
 Transform:
@@ -116715,7 +116962,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 71c26d58e8752874588e103940d9fd15, type: 2}
+  - {fileID: 2100000, guid: 68bfaf6152c0ce048bc840fa1d18e3c1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -116744,6 +116991,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094124833}
   m_Mesh: {fileID: 337395334}
+--- !u!114 &2094124839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094124833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15dbd242b6f5454b9ac0aa0fc0f3a96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSpeed: 0.025
+  ySpeed: 0.025
+--- !u!95 &2094124840
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094124833}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7050952da810a34408e256a195165c7e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2096800556
 GameObject:
   m_ObjectHideFlags: 0
