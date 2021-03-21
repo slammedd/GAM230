@@ -1083,6 +1083,7 @@ MonoBehaviour:
   shotSound: {fileID: 8300000, guid: 4ac7bb523553fcf4a82c7f9e5aebd2bc, type: 3}
   roomNumber: 0
   killScoreIncrease: 50
+  anim: {fileID: 2254597056437299116}
   bulletPrefab: {fileID: 8807957648427788311, guid: becbc54f5ea2baa4d884735993eb6a78,
     type: 3}
 --- !u!1 &7193684902591333643

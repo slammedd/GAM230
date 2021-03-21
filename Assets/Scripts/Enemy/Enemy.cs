@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     public AudioClip shotSound;
     public int roomNumber;
     public int killScoreIncrease;
+    public Animation anim;
 
     private float actualHealth;
     private Transform player;
@@ -109,6 +110,7 @@ public class Enemy : MonoBehaviour
     void Shoot()
     {
         source.PlayOneShot(shotSound);
+        anim.Play("TurretShot");
         fireCooldown = Time.time + 1 / fireRate;
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }
