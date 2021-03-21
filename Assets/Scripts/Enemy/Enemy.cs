@@ -95,7 +95,7 @@ public class Enemy : MonoBehaviour
         if(distanceToPlayer <= range)
         {
             Vector3 direction = player.position - transform.position;
-            Quaternion turretRotation = Quaternion.LookRotation(direction);
+            Quaternion turretRotation = Quaternion.LookRotation(-direction);
             Vector3 newRotation = Quaternion.Lerp(turretHead.rotation, turretRotation, Time.deltaTime * rotationSmoothing).eulerAngles;
             turretHead.rotation = Quaternion.Euler (0, newRotation.y, 0);
             
