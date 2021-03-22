@@ -172,7 +172,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
         {
             //Debug.Log("Slide Jump");
             playerCollider.height = colliderHeight;
-            rb.velocity += new Vector3(0 ,jumpForce, 0);
+            rb.velocity += new Vector3(0 ,jumpForce * 0.75f, 0);
             source.PlayOneShot(jumpSound);
         }
     }
