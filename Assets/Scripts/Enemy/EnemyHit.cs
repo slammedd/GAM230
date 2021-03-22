@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyHit : MonoBehaviour
 {
+    [HideInInspector] public bool damaged;
+
     private Weapon weaponScript; 
     private bool canRun = true;
 
@@ -13,7 +15,7 @@ public class EnemyHit : MonoBehaviour
     }
     private void Update()
     {
-        if (weaponScript.damaged && canRun)
+        if (damaged && canRun)
         {
             StartCoroutine(OnEnemyHit());
         }
@@ -26,6 +28,6 @@ public class EnemyHit : MonoBehaviour
         yield return new WaitForSeconds(.25f);
         GetComponent<Renderer>().material.color = Color.white;
         canRun = true;
-        weaponScript.damaged = false;
+        damaged = false;
     }
 }

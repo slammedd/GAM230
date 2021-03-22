@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     public int roomNumber;
     public int killScoreIncrease;
     public Animation anim;
+     public bool damaged;
 
     private float actualHealth;
     private Transform player;
@@ -26,6 +27,7 @@ public class Enemy : MonoBehaviour
     private SpawnManager spawnManager;
     private bool inRoom;
     private UIManager uiManager;
+    private bool canRun = true;
 
     private void Start()
     {
@@ -52,6 +54,11 @@ public class Enemy : MonoBehaviour
         else
         {
             inRoom = false;
+        }
+
+        if (damaged && canRun)
+        {
+            StartCoroutine(OnEnemyHit());
         }
     }
 
@@ -113,6 +120,24 @@ public class Enemy : MonoBehaviour
         anim.Play("TurretShot");
         fireCooldown = Time.time + 1 / fireRate;
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+    }
+    public IEnumerator OnEnemyHit()
+    {
+        canRun = false;
+
+        foreach(GameObject gO in attachedObjects)
+        {
+            gO.GetComponent<Renderer>().material.color = Color.red;
+        }
+        
+        yield return new WaitForSeconds(.25f);
+        foreach(GameObject gO in attachedObjects)
+        {
+            gO.GetComponent<Renderer>().material.color = Color.white;
+        }    
+
+        canRun = true;
+        damaged = false;
     }
 
     private void OnDrawGizmosSelected()

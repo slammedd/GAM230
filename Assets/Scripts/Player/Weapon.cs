@@ -19,7 +19,6 @@ public class Weapon : MonoBehaviour
     public AudioClip fireSound;
     public AudioClip impactSound;
     public AudioClip turretImpactSound;
-    [HideInInspector] public bool damaged;
 
     private float fireCooldown = 0;
     private Vector3 originPosition;
@@ -58,8 +57,9 @@ public class Weapon : MonoBehaviour
             {
                 Debug.Log("Hit");
                 source.PlayOneShot(turretImpactSound);
-                damaged = true;
+                hit.collider.gameObject.GetComponent<Enemy>().damaged = true;
                 enemy.Damaged(damage);
+                print(hit);
             }
 
             GameObject impact = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
