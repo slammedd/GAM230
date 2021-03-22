@@ -28,8 +28,10 @@ public class PlayerControllerRigidbody : MonoBehaviour
     public AudioClip jumpSound;
     public AudioClip slideSound;
     public AudioClip dashSound;
+    public PhysicMaterial slidePhysMat;
     [HideInInspector] public bool canMove;
     [HideInInspector] public bool dashUnlocked;
+    [HideInInspector] public bool physMatChanged;
 
     Rigidbody rb;
     private float yValue;
@@ -65,6 +67,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
         //CameraFOV();
         VelocityCap();
         health = Mathf.Clamp(health, 0, 100);
+
     }
    
     private void FixedUpdate()
@@ -206,4 +209,12 @@ public class PlayerControllerRigidbody : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!isGrounded)
+        {
+            collision.gameObject.GetComponent<Collider>().material = slidePhysMat;
+            physMatChanged = true;
+        }
+    }
 }

@@ -59,7 +59,6 @@ public class Weapon : MonoBehaviour
                 source.PlayOneShot(turretImpactSound);
                 hit.collider.gameObject.GetComponent<Enemy>().damaged = true;
                 enemy.Damaged(damage);
-                print(hit);
             }
 
             GameObject impact = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));

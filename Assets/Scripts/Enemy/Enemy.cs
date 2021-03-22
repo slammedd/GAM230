@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     public int roomNumber;
     public int killScoreIncrease;
     public Animation anim;
-     public bool damaged;
+    [HideInInspector] public bool damaged;
 
     private float actualHealth;
     private Transform player;

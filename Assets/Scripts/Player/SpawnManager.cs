@@ -10,12 +10,12 @@ public class SpawnManager : MonoBehaviour
     public int spawnCounter = 0;
     [HideInInspector] public bool kill;
     [HideInInspector] public Animator screenWipeAnimator;
+    [HideInInspector] public bool isRunning;
 
     private float checkRadius = 0.2f;
     private Transform acidCheck;
     private PlayerControllerRigidbody playerController;
     private UIManager uiManager;
-    private bool isRunning;
 
     private void Start()
     {
@@ -41,7 +41,11 @@ public class SpawnManager : MonoBehaviour
 
         if (kill && !isRunning)
         {
-            StartCoroutine(ScreenWipe());       
+            /*var changedPhysMat = FindObjectOfType<PhysMatMarker>();
+            changedPhysMat.GetComponent<Collider>().enabled = false;
+            changedPhysMat.GetComponent<Collider>().material = null;
+            changedPhysMat.GetComponent<Collider>().enabled = true;*/
+            StartCoroutine(ScreenWipe());
         }
     }
 
