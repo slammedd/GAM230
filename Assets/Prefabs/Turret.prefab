@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5908215372390257793}
   - component: {fileID: 2207832781295462578}
   - component: {fileID: 925232550623178819}
+  - component: {fileID: 3151931482174279143}
   m_Layer: 0
   m_Name: Cube.005
   m_TagString: Untagged
@@ -79,6 +80,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &3151931482174279143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285470124994073871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1060564471443d34c9fbea75f3e74d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponScript: {fileID: 0}
 --- !u!1 &1024079292102962113
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,6 +141,7 @@ GameObject:
   - component: {fileID: 2637118557120393780}
   - component: {fileID: 2953702634428353901}
   - component: {fileID: 7320232731103482441}
+  - component: {fileID: 1807584175892130426}
   m_Layer: 0
   m_Name: Cylinder.003
   m_TagString: Untagged
@@ -195,6 +210,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1807584175892130426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334569801197723366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1060564471443d34c9fbea75f3e74d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponScript: {fileID: 0}
 --- !u!1 &1363469434274200032
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,6 +234,7 @@ GameObject:
   - component: {fileID: 5949806059601993821}
   - component: {fileID: 5150568613155881584}
   - component: {fileID: 108668473170549729}
+  - component: {fileID: 3580618754191275152}
   m_Layer: 0
   m_Name: Cube.001
   m_TagString: Untagged
@@ -274,6 +303,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &3580618754191275152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363469434274200032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1060564471443d34c9fbea75f3e74d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponScript: {fileID: 0}
 --- !u!1 &2025839649919801539
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,6 +327,7 @@ GameObject:
   - component: {fileID: 4015450322561346337}
   - component: {fileID: 5998220721881229793}
   - component: {fileID: 584224398188319050}
+  - component: {fileID: 4180870236236815140}
   m_Layer: 0
   m_Name: Cylinder.001
   m_TagString: Untagged
@@ -353,6 +396,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &4180870236236815140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025839649919801539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1060564471443d34c9fbea75f3e74d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponScript: {fileID: 0}
 --- !u!1 &2231231747050289173
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,6 +420,7 @@ GameObject:
   - component: {fileID: 2661404685709703625}
   - component: {fileID: 4898860344458548768}
   - component: {fileID: 2066972881712160317}
+  - component: {fileID: 4857066696104910700}
   m_Layer: 0
   m_Name: Cube.002
   m_TagString: Untagged
@@ -432,6 +489,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &4857066696104910700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2231231747050289173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1060564471443d34c9fbea75f3e74d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponScript: {fileID: 0}
 --- !u!1 &3484486799776600278
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,6 +513,7 @@ GameObject:
   - component: {fileID: 4112942375097568574}
   - component: {fileID: 1438143490570932645}
   - component: {fileID: 1907389008531355843}
+  - component: {fileID: 1105323642440114186}
   m_Layer: 0
   m_Name: Cylinder.007
   m_TagString: Untagged
@@ -511,6 +582,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1105323642440114186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3484486799776600278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1060564471443d34c9fbea75f3e74d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponScript: {fileID: 0}
 --- !u!1 &5238958923282915046
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,6 +606,7 @@ GameObject:
   - component: {fileID: 4914030278439284316}
   - component: {fileID: 1549450124796806411}
   - component: {fileID: 450213249543546123}
+  - component: {fileID: 2751432936690042547}
   m_Layer: 0
   m_Name: Cylinder.002
   m_TagString: Untagged
@@ -590,6 +675,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &2751432936690042547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5238958923282915046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1060564471443d34c9fbea75f3e74d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponScript: {fileID: 0}
 --- !u!1 &5541128198779991023
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,6 +699,7 @@ GameObject:
   - component: {fileID: 1590505523265774357}
   - component: {fileID: 2971426246701490322}
   - component: {fileID: 745953019596733400}
+  - component: {fileID: 2264133649423401251}
   m_Layer: 0
   m_Name: Cylinder.005
   m_TagString: Untagged
@@ -669,6 +768,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &2264133649423401251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5541128198779991023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1060564471443d34c9fbea75f3e74d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponScript: {fileID: 0}
 --- !u!1 &5962820162865446034
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,6 +792,7 @@ GameObject:
   - component: {fileID: 4084012164095179521}
   - component: {fileID: 5385026843226743609}
   - component: {fileID: 3921503573705367682}
+  - component: {fileID: 527099982976927348}
   m_Layer: 0
   m_Name: Icosphere
   m_TagString: Untagged
@@ -748,6 +861,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &527099982976927348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5962820162865446034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1060564471443d34c9fbea75f3e74d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponScript: {fileID: 0}
 --- !u!1 &6378042817605302256
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,6 +885,7 @@ GameObject:
   - component: {fileID: 3891323610946888641}
   - component: {fileID: 2324449135830827445}
   - component: {fileID: 705354325457817391}
+  - component: {fileID: 2933408009405774011}
   - component: {fileID: 2254597056437299116}
   m_Layer: 0
   m_Name: Cylinder
@@ -828,6 +955,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &2933408009405774011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6378042817605302256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1060564471443d34c9fbea75f3e74d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponScript: {fileID: 0}
 --- !u!111 &2254597056437299116
 Animation:
   m_ObjectHideFlags: 0
@@ -855,6 +995,7 @@ GameObject:
   - component: {fileID: 3986881306418289553}
   - component: {fileID: 3792099342972935952}
   - component: {fileID: 8216583772455638433}
+  - component: {fileID: 3247139995881237573}
   m_Layer: 0
   m_Name: Cylinder.006
   m_TagString: Untagged
@@ -923,6 +1064,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &3247139995881237573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6870079648861180376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1060564471443d34c9fbea75f3e74d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponScript: {fileID: 0}
 --- !u!1 &7028365727683141002
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,6 +1088,7 @@ GameObject:
   - component: {fileID: 1328224072541690411}
   - component: {fileID: 4710690840558451059}
   - component: {fileID: 5336578764204183941}
+  - component: {fileID: 7283486647397149876}
   m_Layer: 0
   m_Name: Cylinder.004
   m_TagString: Untagged
@@ -1002,6 +1157,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &7283486647397149876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7028365727683141002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1060564471443d34c9fbea75f3e74d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponScript: {fileID: 0}
 --- !u!1 &7193684902490785049
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,6 +1334,7 @@ GameObject:
   - component: {fileID: 335877700408164880}
   - component: {fileID: 2273489564344983259}
   - component: {fileID: 2229127219843944590}
+  - component: {fileID: 2844014885695530796}
   m_Layer: 0
   m_Name: Cube.003
   m_TagString: Untagged
@@ -1234,6 +1403,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &2844014885695530796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8568101701318006145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1060564471443d34c9fbea75f3e74d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponScript: {fileID: 0}
 --- !u!1 &9209086796234582418
 GameObject:
   m_ObjectHideFlags: 0
@@ -1245,6 +1427,7 @@ GameObject:
   - component: {fileID: 3007940517124933663}
   - component: {fileID: 1243889901699932490}
   - component: {fileID: 4707741895176952246}
+  - component: {fileID: 1799121344706736857}
   m_Layer: 0
   m_Name: Cube.004
   m_TagString: Untagged
@@ -1313,6 +1496,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1799121344706736857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9209086796234582418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1060564471443d34c9fbea75f3e74d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponScript: {fileID: 0}
 --- !u!1001 &7193684902278494322
 PrefabInstance:
   m_ObjectHideFlags: 0

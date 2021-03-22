@@ -18,6 +18,8 @@ public class Weapon : MonoBehaviour
     public AudioSource source;
     public AudioClip fireSound;
     public AudioClip impactSound;
+    public AudioClip turretImpactSound;
+    [HideInInspector] public bool damaged;
 
     private float fireCooldown = 0;
     private Vector3 originPosition;
@@ -55,6 +57,8 @@ public class Weapon : MonoBehaviour
             if (hit.transform.tag == "Enemy")
             {
                 Debug.Log("Hit");
+                source.PlayOneShot(turretImpactSound);
+                damaged = true;
                 enemy.Damaged(damage);
             }
 

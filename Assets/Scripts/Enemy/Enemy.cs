@@ -53,13 +53,13 @@ public class Enemy : MonoBehaviour
         {
             inRoom = false;
         }
-        
     }
 
     public void Damaged(float damageAmount)
     {
-        actualHealth -= damageAmount;
         
+        actualHealth -= damageAmount;
+
         if(actualHealth <= 0)
         {           
             Die();
