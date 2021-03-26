@@ -50,7 +50,6 @@ public class UIManager : MonoBehaviour
         score = Mathf.Clamp(score, 0, 9999);
 
         actualTimer -= Time.deltaTime;
-        actualTimer = Mathf.RoundToInt(actualTimer);
 
         if(actualTimer <= 0)
         {

@@ -41,10 +41,6 @@ public class SpawnManager : MonoBehaviour
 
         if (kill && !isRunning)
         {
-            /*var changedPhysMat = FindObjectOfType<PhysMatMarker>();
-            changedPhysMat.GetComponent<Collider>().enabled = false;
-            changedPhysMat.GetComponent<Collider>().material = null;
-            changedPhysMat.GetComponent<Collider>().enabled = true;*/
             StartCoroutine(ScreenWipe());
         }
     }
