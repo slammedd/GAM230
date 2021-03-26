@@ -21,7 +21,7 @@ public class UIManager : MonoBehaviour
     [HideInInspector] public int roomNumber;
     [HideInInspector] public int killNumber;
     [HideInInspector] public float actualTimer = 100f;
-    [HideInInspector] public int score;
+    [HideInInspector] public float score;
 
     private PlayerControllerRigidbody playerController;
     private NextSpawnPoint nextSpawn;
@@ -50,6 +50,7 @@ public class UIManager : MonoBehaviour
         score = Mathf.Clamp(score, 0, 9999);
 
         actualTimer -= Time.deltaTime;
+        actualTimer = Mathf.RoundToInt(actualTimer);
 
         if(actualTimer <= 0)
         {

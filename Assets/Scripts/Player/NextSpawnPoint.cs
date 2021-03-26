@@ -22,6 +22,7 @@ public class NextSpawnPoint : MonoBehaviour
         {
             spawnManager.spawnCounter++;
             uiManager.roomNumber++;
+            uiManager.score += uiManager.actualTimer;
             uiManager.actualTimer = uiManager.roomTimer;
             uiManager.score += roomCompleteScore;
             gameObject.SetActive(false);
