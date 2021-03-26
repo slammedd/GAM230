@@ -64,7 +64,6 @@ public class PlayerControllerRigidbody : MonoBehaviour
         }
 
         Slide();
-        //CameraFOV();
         VelocityCap();
         health = Mathf.Clamp(health, 0, 100);
 
