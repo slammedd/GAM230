@@ -8,6 +8,8 @@ using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour
 {
+    public AudioSource source;
+    public AudioClip UIInteractSound;
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI room;
     public float roomTimer;
@@ -82,6 +84,7 @@ public class UIManager : MonoBehaviour
 
     public void ReloadScene()
     {
+        source.PlayOneShot(UIInteractSound);
         SceneManager.LoadScene("Levels");
         Debug.Log("reload");
     }
