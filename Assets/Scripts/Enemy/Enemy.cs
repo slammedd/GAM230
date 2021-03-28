@@ -127,13 +127,15 @@ public class Enemy : MonoBehaviour
 
         foreach(GameObject gO in attachedObjects)
         {
-            gO.GetComponent<Renderer>().material.color = Color.red;
+            gO.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+            gO.GetComponent<Renderer>().material.SetColor("_EmissionColor", Color.red * 3);
         }
         
         yield return new WaitForSeconds(.25f);
         foreach(GameObject gO in attachedObjects)
         {
             gO.GetComponent<Renderer>().material.color = Color.white;
+            gO.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");           
         }    
 
         canRun = true;
