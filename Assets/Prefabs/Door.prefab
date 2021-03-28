@@ -59,6 +59,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorAnimator: {fileID: 2867157925724544145}
+  source: {fileID: 0}
+  doorOpenSound: {fileID: 8300000, guid: 8970ea807fce2d3439c3dd0400d2d1c8, type: 3}
+  doorCloseSound: {fileID: 8300000, guid: 961ee1432452f6445a193f04ddef3cd2, type: 3}
 --- !u!1 &3513553262464758302
 GameObject:
   m_ObjectHideFlags: 0
