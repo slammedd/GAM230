@@ -56,7 +56,6 @@ public class Weapon : MonoBehaviour
             if (hit.transform.tag == "Enemy")
             {
                 Debug.Log("Hit");
-                source.PlayOneShot(turretImpactSound);
                 hit.collider.gameObject.GetComponent<Enemy>().damaged = true;
                 enemy.Damaged(damage);
             }
