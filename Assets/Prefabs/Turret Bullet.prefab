@@ -53,7 +53,7 @@ MonoBehaviour:
   bulletSpeed: 10
   explosionParticleSystem: {fileID: 5052661001374211486}
   damageAmount: 10
-  impactObject: {fileID: 8300000, guid: dd702a0923b08c64daf91951b6b8c5f5, type: 3}
+  impactObject: {fileID: 8300000, guid: f7c6510065f5e924ebb0ac12a124c0fa, type: 3}
   impactPlayer: {fileID: 8300000, guid: a43640e41222d354c9be2a3c0b1d7aff, type: 3}
 --- !u!54 &1447671947465917533
 Rigidbody:

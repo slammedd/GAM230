@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DashAbility : MonoBehaviour
 {
+    public AudioSource source;
+    public AudioClip unlockSound;
+
     private PlayerControllerRigidbody playerController;
 
     private void Start()
@@ -15,6 +18,7 @@ public class DashAbility : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            source.PlayOneShot(unlockSound);
             playerController.dashUnlocked = true;
             Destroy(gameObject);
         }
