@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour
     public GameObject retryButton;
     public TextMeshProUGUI scoreText;
     public ScorePowerup scorePowerup;
-    public Text dashText;
+    public TextMeshProUGUI dashText;
     [HideInInspector] public int roomNumber;
     [HideInInspector] public int killNumber;
     [HideInInspector] public float actualTimer = 100f;
