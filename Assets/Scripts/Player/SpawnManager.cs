@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    public AudioSource source;
+    public AudioClip deathSound;
     public LayerMask acid;
     public Transform[] spawnPoints;
     public GameObject playerCamera;
@@ -53,6 +55,7 @@ public class SpawnManager : MonoBehaviour
 
     public IEnumerator ScreenWipe()
     {
+        source.PlayOneShot(deathSound);
         isRunning = true;
         playerController.canMove = false;
         screenWipeAnimator.SetBool("Trigger", false);
