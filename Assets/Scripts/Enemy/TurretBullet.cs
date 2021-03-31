@@ -9,6 +9,7 @@ public class TurretBullet : MonoBehaviour
     public int damageAmount;
     public AudioClip impactObject;
     public AudioClip impactPlayer;
+    public AudioClip[] playerDamageSounds;
 
     private AudioSource source;
     Rigidbody rb;
@@ -44,6 +45,8 @@ public class TurretBullet : MonoBehaviour
         {
             explosionParticleSystem.SetActive(true);
             source.PlayOneShot(impactPlayer);
+            AudioClip clip = RandomDamageSound();
+            source.PlayOneShot(clip);
             GetComponent<MeshRenderer>().enabled = false;
             GetComponent<Collider>().enabled = false;
             playerController.health -= damageAmount;
@@ -61,5 +64,10 @@ public class TurretBullet : MonoBehaviour
         GetComponent<Collider>().enabled = false;
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);       
-    }  
+    }
+
+    private AudioClip RandomDamageSound()
+    {
+        return playerDamageSounds[UnityEngine.Random.Range(0, playerDamageSounds.Length)];
+    }
 }

@@ -55,6 +55,10 @@ MonoBehaviour:
   damageAmount: 10
   impactObject: {fileID: 8300000, guid: f7c6510065f5e924ebb0ac12a124c0fa, type: 3}
   impactPlayer: {fileID: 8300000, guid: a43640e41222d354c9be2a3c0b1d7aff, type: 3}
+  playerDamageSounds:
+  - {fileID: 8300000, guid: 6185816c027cdf8488f04b0b65c037e9, type: 3}
+  - {fileID: 8300000, guid: e532f6dd2dc247b43a50707c7d6cdd24, type: 3}
+  - {fileID: 8300000, guid: 49af11269ee0e6d49a8a394c73e4e4a7, type: 3}
 --- !u!54 &1447671947465917533
 Rigidbody:
   m_ObjectHideFlags: 0
