@@ -4928,7 +4928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
   healthToAdd: 20
-  healthPickupSound: {fileID: 8300000, guid: 8a55e4bcb2557dd46aaba7cc6e2e2d20, type: 3}
+  healthPickupSound: {fileID: 8300000, guid: f7367100330e05c449de18c066fe2059, type: 3}
 --- !u!1001 &3960714164877536849
 PrefabInstance:
   m_ObjectHideFlags: 0
