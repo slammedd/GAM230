@@ -25,7 +25,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
     public float slideTime;
     public float slideJumpMultiplier;
     public AudioSource source;
-    public AudioClip jumpSound;
+    public AudioClip[] jumpSounds;
     public AudioClip slideSound;
     public AudioClip dashSound;
     public PhysicMaterial slidePhysMat;
@@ -124,7 +124,8 @@ public class PlayerControllerRigidbody : MonoBehaviour
         {
             //Debug.Log("Jump");
             rb.velocity += new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
-            source.PlayOneShot(jumpSound);
+            AudioClip clip = RandomJumpSound();
+            source.PlayOneShot(clip);
             jumpBufferCount = 0;
         }
 
@@ -172,7 +173,8 @@ public class PlayerControllerRigidbody : MonoBehaviour
             //Debug.Log("Slide Jump");
             playerCollider.height = colliderHeight;
             rb.velocity += new Vector3(0 ,jumpForce * 0.75f, 0);
-            source.PlayOneShot(jumpSound);
+            AudioClip clip = RandomJumpSound();
+            source.PlayOneShot(clip);
         }
     }
 
@@ -215,5 +217,10 @@ public class PlayerControllerRigidbody : MonoBehaviour
             collision.gameObject.GetComponent<Collider>().material = slidePhysMat;
             physMatChanged = true;
         }
+    }
+
+    private AudioClip RandomJumpSound()
+    {
+        return jumpSounds[UnityEngine.Random.Range(0, jumpSounds.Length)];
     }
 }
