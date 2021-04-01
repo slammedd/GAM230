@@ -4813,6 +4813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreToAdd: 10
+  pickupSound: {fileID: 8300000, guid: a133935de3691b34096662808ddf5c5f, type: 3}
 --- !u!95 &1338508657424411577
 Animator:
   serializedVersion: 3
