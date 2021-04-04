@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class MainMenu : MonoBehaviour
 {
@@ -11,10 +13,17 @@ public class MainMenu : MonoBehaviour
     public AudioSource source;
     public AudioClip UISound;
     public GameObject[] mainMenuObjects;
+    public Slider volumeSlider;
+    public AudioMixer masterMixer;
 
     private void Start()
     {
         StartCoroutine(NoteAnimations());
+    }
+
+    private void Update()
+    {
+        masterMixer.SetFloat("MasterVolume", volumeSlider.value);
     }
 
     IEnumerator MenuAnimations()
@@ -55,6 +64,16 @@ public class MainMenu : MonoBehaviour
     {
         source.PlayOneShot(UISound);
         Application.Quit();
+    }
+
+    public void AudioPlay()
+    {
+        source.PlayOneShot(UISound);
+    }
+
+    public void ShowButtons()
+    {
+        StartCoroutine(MenuAnimations());
     }
 
 }
