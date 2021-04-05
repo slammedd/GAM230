@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public ScorePowerup scorePowerup;
     public TextMeshProUGUI dashText;
+    public GameObject pauseMenu;
     [HideInInspector] public int roomNumber;
     [HideInInspector] public int killNumber;
     [HideInInspector] public float actualTimer = 100f;
@@ -70,6 +71,16 @@ public class UIManager : MonoBehaviour
         {
             Retry();
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Time.timeScale = 0;
+            playerController.canMove = false;
+            pauseMenu.SetActive(true);
+            source.PlayOneShot(UIInteractSound);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
     void Retry()
@@ -94,5 +105,22 @@ public class UIManager : MonoBehaviour
         dashAnimatior.SetBool("Trigger", true);
         yield return new WaitForSeconds(3.25f);
         dashAnimatior.SetBool("Trigger", false);
+    }
+
+    public void LoadMainMenu()
+    {
+        source.PlayOneShot(UIInteractSound);
+        Time.timeScale = 1;
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void HidePauseMenu()
+    {
+        Time.timeScale = 1;
+        playerController.canMove = true;
+        source.PlayOneShot(UIInteractSound);
+        pauseMenu.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }
