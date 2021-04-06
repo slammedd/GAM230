@@ -121,6 +121,7 @@ public class Enemy : MonoBehaviour
         fireCooldown = Time.time + 1 / fireRate;
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }
+
     public IEnumerator OnEnemyHit()
     {
         canRun = false;

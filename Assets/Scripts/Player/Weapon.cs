@@ -52,6 +52,7 @@ public class Weapon : MonoBehaviour
         {
             source.PlayOneShot(impactSound);
             Enemy enemy = hit.transform.GetComponent<Enemy>();
+            Drone drone = hit.transform.GetComponent<Drone>();
 
             if (hit.transform.tag == "Enemy")
             {
@@ -59,6 +60,13 @@ public class Weapon : MonoBehaviour
                 source.PlayOneShot(turretImpactSound);
                 hit.collider.gameObject.GetComponent<Enemy>().damaged = true;
                 enemy.Damaged(damage);
+            }
+
+            if (hit.transform.tag == "Drone")
+            {
+                Debug.Log("Hit");
+                source.PlayOneShot(turretImpactSound);
+                drone.Damaged(damage);
             }
 
             GameObject impact = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
