@@ -12,12 +12,16 @@ public class Drone : MonoBehaviour
     public ParticleSystem impactParticleSystem;
     public GameObject[] attachedObjects;
     public float health;
+    public float pushForce;
+    public AudioSource source;
+    public AudioClip explosionSound;
 
     private Vector3 startPoint;
     private UIManager uiManager;
     private bool canMove = true;
     private float actualHealth;
     private SpawnManager spawnManager;
+    private Rigidbody playerRigidbody;
 
     private void Start()
     {
@@ -25,6 +29,7 @@ public class Drone : MonoBehaviour
         uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
         health = actualHealth;
         spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
+        playerRigidbody = player.GetComponent<Rigidbody>();
     }
 
     private void Update()
@@ -48,6 +53,11 @@ public class Drone : MonoBehaviour
         {
             Die();
             impactParticleSystem.Play();
+
+            Vector3 droneNormal = collision.contacts[0].normal;
+            Vector3 movementDirection = Vector3.Reflect(playerRigidbody.velocity, droneNormal).normalized;
+            playerRigidbody.AddForce(movementDirection * pushForce, ForceMode.Impulse);
+            source.PlayOneShot(explosionSound);
         }
     }
     public void Damaged(float damageAmount)
