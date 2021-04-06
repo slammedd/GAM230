@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using UnityEngine.Rendering.PostProcessing;
 
 public class MainMenu : MonoBehaviour
 {
@@ -15,15 +16,21 @@ public class MainMenu : MonoBehaviour
     public GameObject[] mainMenuObjects;
     public Slider volumeSlider;
     public AudioMixer masterMixer;
+    public PostProcessProfile postFXProfile;
+    public Slider brightnessSlider;
+
+    private ColorGrading colorGrading;
 
     private void Start()
     {
         StartCoroutine(NoteAnimations());
+        postFXProfile.TryGetSettings(out colorGrading);
     }
 
     private void Update()
     {
         masterMixer.SetFloat("MasterVolume", volumeSlider.value);
+        colorGrading.postExposure.value = brightnessSlider.value;        
     }
 
     IEnumerator MenuAnimations()
