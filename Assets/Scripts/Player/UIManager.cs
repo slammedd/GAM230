@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     public Slider timerSlider;
     public TextMeshProUGUI diedText;
     public GameObject retryButton;
+    public TextMeshProUGUI finalScoreText;
     public TextMeshProUGUI scoreText;
     public ScorePowerup scorePowerup;
     public TextMeshProUGUI dashText;
@@ -31,6 +32,7 @@ public class UIManager : MonoBehaviour
     private Animator dashAnimatior;
     private bool canAnimate = true;
     private SpawnManager spawnManager;
+    private bool canPause = true;
 
     private void Start()
     {
@@ -72,7 +74,7 @@ public class UIManager : MonoBehaviour
             Retry();
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && canPause)
         {
             Time.timeScale = 0;
             playerController.canMove = false;
@@ -80,6 +82,7 @@ public class UIManager : MonoBehaviour
             source.PlayOneShot(UIInteractSound);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            canPause = false;
         }
     }
 
@@ -89,6 +92,8 @@ public class UIManager : MonoBehaviour
         spawnManager.screenWipeAnimator.SetBool("Trigger", false);
         diedText.gameObject.SetActive(true);
         retryButton.SetActive(true);
+        finalScoreText.text = ("Score: " + score);
+        finalScoreText.gameObject.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
@@ -111,6 +116,7 @@ public class UIManager : MonoBehaviour
     {
         source.PlayOneShot(UIInteractSound);
         Time.timeScale = 1;
+        canPause = true;
         SceneManager.LoadScene("MainMenu");
     }
 
@@ -122,5 +128,6 @@ public class UIManager : MonoBehaviour
         pauseMenu.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        canPause = true;
     }
 }
