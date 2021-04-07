@@ -92,7 +92,7 @@ public class UIManager : MonoBehaviour
         spawnManager.screenWipeAnimator.SetBool("Trigger", false);
         diedText.gameObject.SetActive(true);
         retryButton.SetActive(true);
-        finalScoreText.text = ("Score: " + score);
+        finalScoreText.text = ("Final Score: " + score);
         finalScoreText.gameObject.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
