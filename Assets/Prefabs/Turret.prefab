@@ -1237,6 +1237,7 @@ MonoBehaviour:
   - {fileID: 5541128198779991023}
   - {fileID: 6870079648861180376}
   - {fileID: 5962820162865446034}
+  - {fileID: 665897375539147958}
   range: 10
   turretHead: {fileID: 1173248374238936796}
   rotationSmoothing: 100
