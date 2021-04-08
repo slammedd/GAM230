@@ -17,11 +17,13 @@ public class UIManager : MonoBehaviour
     public Slider timerSlider;
     public TextMeshProUGUI diedText;
     public GameObject retryButton;
+    public GameObject mainMenuButton;
     public TextMeshProUGUI finalScoreText;
     public TextMeshProUGUI scoreText;
     public ScorePowerup scorePowerup;
     public TextMeshProUGUI dashText;
     public GameObject pauseMenu;
+    public TextMeshProUGUI youSurvivedText;
     [HideInInspector] public int roomNumber;
     [HideInInspector] public int killNumber;
     [HideInInspector] public float actualTimer = 100f;
@@ -92,6 +94,20 @@ public class UIManager : MonoBehaviour
         spawnManager.screenWipeAnimator.SetBool("Trigger", false);
         diedText.gameObject.SetActive(true);
         retryButton.SetActive(true);
+        mainMenuButton.SetActive(true);
+        finalScoreText.text = ("Final Score: " + score);
+        finalScoreText.gameObject.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void GameEnd()
+    {
+        playerController.canMove = false;
+        spawnManager.screenWipeAnimator.SetBool("Trigger", false);
+        youSurvivedText.gameObject.SetActive(true);
+        retryButton.SetActive(true);
+        mainMenuButton.SetActive(true);
         finalScoreText.text = ("Final Score: " + score);
         finalScoreText.gameObject.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
