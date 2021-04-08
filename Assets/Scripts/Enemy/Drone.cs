@@ -18,6 +18,7 @@ public class Drone : MonoBehaviour
     public AudioClip explosionSound;
 
     private Vector3 startPoint;
+    private Quaternion startRotation;
     private UIManager uiManager;
     private bool canMove = true;
     private float actualHealth;
@@ -27,6 +28,7 @@ public class Drone : MonoBehaviour
     private void Start()
     {
         startPoint = transform.position;
+        startRotation = transform.rotation;
         uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
         health = actualHealth;
         spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
@@ -35,15 +37,11 @@ public class Drone : MonoBehaviour
 
     private void Update()
     {
-        if (canMove)
+        float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+
+        if (canMove && distanceToPlayer <= range)
         {
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, movementSpeed);       
-        }
-
-        float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
-        
-        if(distanceToPlayer <= range)
-        {
             transform.LookAt(player.transform.position);
         }
 
@@ -96,6 +94,7 @@ public class Drone : MonoBehaviour
         canMove = true;
         GetComponent<Collider>().enabled = true;
         transform.position = startPoint;
+        transform.rotation = startRotation;
         foreach (GameObject obj in attachedObjects)
         {
             obj.SetActive(true);
