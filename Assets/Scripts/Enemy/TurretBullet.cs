@@ -60,6 +60,7 @@ public class TurretBullet : MonoBehaviour
         explosionParticleSystem.SetActive(false);
         yield return new WaitForSeconds(1f);
         explosionParticleSystem.SetActive(true);
+        source.PlayOneShot(impactObject);
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
         yield return new WaitForSeconds(1f);
