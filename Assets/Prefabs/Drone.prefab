@@ -477,6 +477,7 @@ MonoBehaviour:
   - {fileID: 6498566996816999591}
   - {fileID: 6498566997873914445}
   health: 10
+  range: 10
   pushForce: 100
   source: {fileID: 0}
   explosionSound: {fileID: 8300000, guid: f7c6510065f5e924ebb0ac12a124c0fa, type: 3}
