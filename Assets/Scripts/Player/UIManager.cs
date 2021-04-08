@@ -28,13 +28,13 @@ public class UIManager : MonoBehaviour
     [HideInInspector] public int killNumber;
     [HideInInspector] public float actualTimer = 100f;
     [HideInInspector] public float score;
+    [HideInInspector] public bool canPause = true;
 
     private PlayerControllerRigidbody playerController;
     private NextSpawnPoint nextSpawn;
     private Animator dashAnimatior;
     private bool canAnimate = true;
     private SpawnManager spawnManager;
-    private bool canPause = true;
 
     private void Start()
     {

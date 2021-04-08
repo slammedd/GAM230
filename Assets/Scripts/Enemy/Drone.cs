@@ -49,6 +49,16 @@ public class Drone : MonoBehaviour
         {
             Respawn();
         }
+
+        if(uiManager.canPause == false)
+        {
+            canMove = false;
+        }
+
+        else
+        {
+            canMove = true;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
