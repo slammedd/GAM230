@@ -12,6 +12,7 @@ public class Drone : MonoBehaviour
     public ParticleSystem impactParticleSystem;
     public GameObject[] attachedObjects;
     public float health;
+    public float range;
     public float pushForce;
     public AudioSource source;
     public AudioClip explosionSound;
@@ -39,7 +40,12 @@ public class Drone : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, movementSpeed);       
         }
 
-        transform.LookAt(player.transform.position);
+        float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+        
+        if(distanceToPlayer <= range)
+        {
+            transform.LookAt(player.transform.position);
+        }
 
         if (spawnManager.kill)
         {
@@ -94,5 +100,11 @@ public class Drone : MonoBehaviour
         {
             obj.SetActive(true);
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, range);
     }
 }
