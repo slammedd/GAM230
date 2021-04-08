@@ -57,6 +57,7 @@ public class SpawnManager : MonoBehaviour
     {
         source.PlayOneShot(deathSound);
         isRunning = true;
+        uiManager.actualTimer = uiManager.roomTimer;
         playerController.canMove = false;
         screenWipeAnimator.SetBool("Trigger", false);
         yield return new WaitForSeconds(0.5f);
@@ -64,7 +65,6 @@ public class SpawnManager : MonoBehaviour
         GameObject.Find("Player").transform.rotation = spawnPoints[spawnCounter].rotation;
         screenWipeAnimator.SetBool("Trigger", true);
         playerController.health -= 10;
-        uiManager.actualTimer = uiManager.roomTimer;
         yield return new WaitForSeconds(0.8f);
         playerController.canMove = true;
         isRunning = false;
