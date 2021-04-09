@@ -16,6 +16,8 @@ public class Drone : MonoBehaviour
     public float pushForce;
     public AudioSource source;
     public AudioClip explosionSound;
+    public AudioClip detectedSound;
+    public SphereCollider detectionCollider;
 
     private Vector3 startPoint;
     private Quaternion startRotation;
@@ -33,11 +35,13 @@ public class Drone : MonoBehaviour
         health = actualHealth;
         spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
         playerRigidbody = player.GetComponent<Rigidbody>();
+        detectionCollider.radius = range;
     }
 
     private void Update()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+
 
         if (canMove && distanceToPlayer <= range)
         {
@@ -74,6 +78,12 @@ public class Drone : MonoBehaviour
             source.PlayOneShot(explosionSound);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        source.PlayOneShot(detectedSound);    
+    }
+
     public void Damaged(float damageAmount)
     {
 

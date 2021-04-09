@@ -407,6 +407,7 @@ GameObject:
   - component: {fileID: 919132147549577365}
   - component: {fileID: 919132147549577367}
   - component: {fileID: 4761811128774061861}
+  - component: {fileID: 102390343736748022}
   m_Layer: 0
   m_Name: Drone
   m_TagString: Drone
@@ -482,6 +483,8 @@ MonoBehaviour:
   pushForce: 100
   source: {fileID: 0}
   explosionSound: {fileID: 8300000, guid: f7c6510065f5e924ebb0ac12a124c0fa, type: 3}
+  detectedSound: {fileID: 8300000, guid: 11428d50dbc036341a9617fb10084dee, type: 3}
+  detectionCollider: {fileID: 102390343736748022}
 --- !u!95 &4761811128774061861
 Animator:
   serializedVersion: 3
@@ -501,6 +504,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!135 &102390343736748022
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6264196544068151101}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6498566996816999591
 GameObject:
   m_ObjectHideFlags: 0
