@@ -481,6 +481,7 @@ MonoBehaviour:
   health: 10
   range: 10
   pushForce: 100
+  damageAmount: 10
   source: {fileID: 0}
   explosionSound: {fileID: 8300000, guid: f7c6510065f5e924ebb0ac12a124c0fa, type: 3}
   detectedSound: {fileID: 8300000, guid: 11428d50dbc036341a9617fb10084dee, type: 3}
@@ -512,7 +513,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6264196544068151101}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5

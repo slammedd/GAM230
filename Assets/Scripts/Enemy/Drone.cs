@@ -14,6 +14,7 @@ public class Drone : MonoBehaviour
     public float health;
     public float range;
     public float pushForce;
+    public int damageAmount;
     public AudioSource source;
     public AudioClip explosionSound;
     public AudioClip detectedSound;
@@ -71,7 +72,7 @@ public class Drone : MonoBehaviour
         {
             Die();
             impactParticleSystem.Play();
-
+            player.GetComponent<PlayerControllerRigidbody>().health -= damageAmount;
             Vector3 droneNormal = collision.contacts[0].normal;
             Vector3 movementDirection = Vector3.Reflect(playerRigidbody.velocity, droneNormal).normalized;
             playerRigidbody.AddForce(movementDirection * pushForce, ForceMode.Impulse);
