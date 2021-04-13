@@ -28,6 +28,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
     public AudioClip[] jumpSounds;
     public AudioClip slideSound;
     public AudioClip dashSound;
+    public AudioClip invincibleSound;
     public PhysicMaterial slidePhysMat;
     [HideInInspector] public bool canMove;
     [HideInInspector] public bool dashUnlocked;
@@ -42,6 +43,7 @@ public class PlayerControllerRigidbody : MonoBehaviour
     float colliderHeight;   
     private float slideHeightDecrease = 1f;
     private bool isSliding;
+    private bool invincible = false;
 
     private void Start()
     {
@@ -55,6 +57,21 @@ public class PlayerControllerRigidbody : MonoBehaviour
 
     private void Update()
     {
+        if(Input.GetKeyDown(KeyCode.F1))
+        {
+            invincible = true;
+            source.PlayOneShot(invincibleSound);
+        }
+
+        if (invincible)
+        {
+            if(health < 100)
+            {
+                health = 100;
+            }
+        }
+
+
         MouseLook();
         Jump();
 
