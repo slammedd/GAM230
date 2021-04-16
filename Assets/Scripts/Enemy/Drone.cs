@@ -27,6 +27,7 @@ public class Drone : MonoBehaviour
     private float actualHealth;
     private SpawnManager spawnManager;
     private Rigidbody playerRigidbody;
+    private bool canPlay;
 
     private void Start()
     {
@@ -82,7 +83,11 @@ public class Drone : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        source.PlayOneShot(detectedSound);    
+        if (canPlay)
+        {
+            source.PlayOneShot(detectedSound);
+            canPlay = false;
+        }
     }
 
     public void Damaged(float damageAmount)
@@ -113,6 +118,7 @@ public class Drone : MonoBehaviour
     {
         actualHealth = health;
         canMove = true;
+        canPlay = true;
         GetComponent<Collider>().enabled = true;
         transform.position = startPoint;
         transform.rotation = startRotation;

@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
+    public GameObject[] objectsToParent;
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.collider.transform.SetParent(transform);
+            foreach(GameObject gO in objectsToParent)
+            {
+                collision.collider.transform.SetParent(transform);
+            }
         }
     }
 
@@ -16,7 +21,10 @@ public class MovingPlatform : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.collider.transform.SetParent(null);
+            foreach (GameObject gO in objectsToParent)
+            {
+                collision.collider.transform.SetParent(null);
+            }
         }
     }
 

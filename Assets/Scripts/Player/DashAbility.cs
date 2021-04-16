@@ -22,8 +22,8 @@ public class DashAbility : MonoBehaviour
         {
             source.PlayOneShot(unlockSound);
             playerController.dashUnlocked = true;
-            uiManager.timerSlider.maxValue = uiManager.roomTimer * 2;
-            uiManager.roomTimer = uiManager.roomTimer * 2;
+            uiManager.timerSlider.maxValue = uiManager.roomTimer * 4;
+            uiManager.roomTimer = uiManager.roomTimer * 4;
             uiManager.actualTimer = uiManager.roomTimer;
             Destroy(gameObject);
         }
