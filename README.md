@@ -1,5 +1,7 @@
 All sounds used were used under license from Soundly: https://getsoundly.com/\
 
+In-game music by Karl Casey @ White Bat Audio https://www.youtube.com/watch?v=44ZyRLjWXa4&ab_channel=WhiteBatAudio
+
 Link to font: https://www.1001fonts.com/upheaval-pro-font.html
 
 
